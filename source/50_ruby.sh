@@ -11,7 +11,7 @@ export PATH
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]
 then
   source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-  function __my_rvm_ruby_version {
+  function __ruby_ps {
     local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
     [ "$gemset" != "" ] && gemset="@$gemset"
     local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
@@ -20,16 +20,31 @@ then
     [ "$full" != "" ] && echo "$full "
   }
 else
-  function __my_rvm_ruby_version {
-    echo ""
-  }
+  if [[ "~/.rbenv/shims" ]]
+  then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    export PATH=~/.rbenv/shims:$PATH
+    eval "$(rbenv init -)"
+
+
+    # prompt with ruby version
+    # rbenv version | sed -e 's/ .*//'
+    __ruby_ps ()
+    {
+      rbenv_ruby_version=`rbenv version | sed -e 's/ .*//'`
+      printf $rbenv_ruby_version
+    }
+
+  else
+    __ruby_ps ()
+    {
+      echo ""
+    }
+
+
+  fi
 fi
 
-if [[ -s "~/.rbenv/shims" ]]
-then
-  export PATH=~/.rbenv/shims:$PATH
-  eval "$(rbenv init -)"
-fi
 
 alias vruby2='echo "2.1.2" > .ruby-version;cd .;touch Gemfile;touch .gitignore'
 
@@ -48,4 +63,9 @@ gemadd(){
   echo -e "\ngem '$1'" >> Gemfile;
   bundle
 }
+
+
+alias be="bundle exec"
+alias rk="be rake"
+alias rspec="rspec --color --format documentation "
 
