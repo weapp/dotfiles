@@ -35,3 +35,6 @@ alias sshvagrant="ssh 127.0.0.1 -p 2222  -i ~/.vagrant.d/insecure_private_key -l
 alias json="python -mjson.tool"
 spy () { lsof -i -P +c 0 +M | grep -i "$1"; }
 alias grep='grep --color=auto'
+
+
+alias redis-keys='echo "KEYS *" | redis-cli'

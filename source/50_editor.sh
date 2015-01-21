@@ -10,6 +10,6 @@ fi
 export VISUAL="$EDITOR"
 
 
-alias openbash='subl ~/.bash_profile'
+alias openbash='subl ~/.dotfiles/source/'
 alias openhost='subl /etc/hosts'
 alias reloadbash='source ~/.bash_profile'
