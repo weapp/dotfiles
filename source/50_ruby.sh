@@ -48,14 +48,15 @@ fi
 
 alias vruby2='echo "2.1.2" > .ruby-version;cd .;touch Gemfile;touch .gitignore'
 
-initruby(){ 
+initruby(){
   vruby2;
   echo -e "# -*- coding: utf-8 -*-\nsource 'https://rubygems.org'\n\n#gem 'lotusrb', github: 'lotus/lotus'\ngem 'rspec', group: 'development'" > Gemfile;
+
   echo -e "--color --format documentation" > .rspec;
   bundle
   curl -s 'https://raw.githubusercontent.com/github/gitignore/master/Ruby.gitignore' > .gitignore
   touch 'README.md'
-  touch 'app.rb'
+  echo -e '#!/usr/bin/env ruby' > app.rb;
   subl .
 }
 
