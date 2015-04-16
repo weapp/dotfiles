@@ -38,3 +38,10 @@ alias grep='grep --color=auto'
 
 
 alias redis-keys='echo "KEYS *" | redis-cli'
+
+
+alias rmf="$(which rm)"
+
+function del(){
+  mv $1 /tmp
+}

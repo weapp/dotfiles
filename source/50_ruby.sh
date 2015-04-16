@@ -70,3 +70,8 @@ alias be="bundle exec"
 alias rk="be rake"
 alias rspec="rspec --color --format documentation "
 
+
+alias metric1="rubocop"
+alias metric2="flog"
+alias metric3="flay"
+alias metric4="heckle"
