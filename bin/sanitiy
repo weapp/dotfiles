@@ -1,0 +1,42 @@
+# gem 'wuaki_common', git: 'git@github.com:wuakitv/wuaki_common.git', branch: 'manu/UP-704'
+# BRANCH="manu/UP-704-22afa"
+# BRANCH="manu/UP-704"
+
+BRANCH="$1"
+USER="wuakitv"
+GEM="wuaki_common"
+TICKET=$(echo "print '$BRANCH'.match(/\/([a-z]*-[0-9]*)/i)[1]" | ruby)
+
+echo "BRANCH=$BRANCH"
+echo "USER=$USER"
+echo "GEM=$GEM"
+echo "TICKET=$TICKET"
+
+if [ -z "$TICKET" ]
+  then
+    echo "No branch supplied or not valid"
+    exit -1
+fi
+
+# read -e -i "yes" -p "continue: " choice
+# read -e -p "Enter your choice: " choice
+
+echo -n "Continue (y/[n])? "
+read answer
+if echo "$answer" | grep -iq "^y" ;then
+    echo " => OK"
+else
+    exit -1
+fi
+
+git checkout master
+git pull
+sed -i.bak "s/gem '$GEM', .*/gem '$GEM', git: 'git@github.com:$USER\/$GEM.git', branch: '$BRANCH'/g" Gemfile
+rm Gemfile.bak
+bundle
+git checkout -b "$BRANCH"
+git add Gemfile*
+git commit -m "[$TICKET] Update $GEM"
+git push --set-upstream origin $BRANCH
+hub pull-request -o -m "[SANITY][$TICKET] Update $GEM"
+
