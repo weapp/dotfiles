@@ -10,11 +10,12 @@ export PATH
 alias c="tr -d '\n' | pbcopy"
 
 # Make 'less' more.
-[[ "$(type -P lesspipe.sh)" ]] && eval "$(lesspipe.sh)"
+# [[ "$(type -P lesspipe.sh)" ]] && eval "$(lesspipe.sh)"
 
 # Start ScreenSaver. This will lock the screen if locking is enabled.
 alias ss="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
 alias lock="/System/Library/CoreServices/Menu\ Extras/user.menu/Contents/Resources/CGSession -suspend"
+alias zz=ss
 
 # Create a new Parallels VM from template, replacing the existing one.
 function vm_template() {
