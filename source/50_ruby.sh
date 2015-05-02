@@ -56,7 +56,7 @@ initruby(){
   bundle
   curl -s 'https://raw.githubusercontent.com/github/gitignore/master/Ruby.gitignore' > .gitignore
   touch 'README.md'
-  echo -e '#!/usr/bin/env ruby' > app.rb;
+  echo -e "#!/usr/bin/env ruby\n\nrequire 'bundler/setup'\n\nBundler.require(:default)\n" > app.rb;
   subl .
 }
 
