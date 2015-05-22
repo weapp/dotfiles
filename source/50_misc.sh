@@ -24,6 +24,7 @@ fi
 export ANSIBLE_NOCOWS=1
 
 alias cls='clear;echo;echo;echo;echo;echo;echo;echo;echo;echo;clear'
+alias cls='ruby -e "puts [nil]*100"'
 
 
 alias server='python -m SimpleHTTPServer 8000'
@@ -43,6 +44,7 @@ alias redis-keys='echo "KEYS *" | redis-cli'
 alias rmf="$(which rm)"
 
 alias rubomodify="git status -s | grep -o '[^ ][^ ][^ ]*' | xargs rubocop"
+alias githubstatus="curl https://status.github.com/api/status.json -s  |ruby -rjson -e \"puts JSON.parse(STDIN.read)['status']\""
 
 function del(){
   mv $1 /tmp
