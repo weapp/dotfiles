@@ -42,6 +42,8 @@ alias redis-keys='echo "KEYS *" | redis-cli'
 
 alias rmf="$(which rm)"
 
+alias rubomodify="git status -s | grep -o '[^ ][^ ][^ ]*' | xargs rubocop"
+
 function del(){
   mv $1 /tmp
 }
