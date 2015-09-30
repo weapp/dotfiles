@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+cd ~/Downloads
+ls | grep $1
+ls | grep $1 | find "$(cat)" | grep mkv | open "$(cat)"
+# ls | grep $1 | find "$(cat)" | grep mkv | castnow "$(cat)"

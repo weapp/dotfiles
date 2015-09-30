@@ -49,3 +49,5 @@ alias githubstatus="curl https://status.github.com/api/status.json -s  |ruby -rj
 function del(){
   mv $1 /tmp
 }
+
+export DOCKER_HOST='tcp://127.0.0.1:2375'
