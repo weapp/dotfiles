@@ -50,7 +50,7 @@ alias vruby2='echo "2.1.2" > .ruby-version;cd .;touch Gemfile;touch .gitignore'
 
 initruby(){
   vruby2;
-  echo -e "# -*- coding: utf-8 -*-\nsource 'https://rubygems.org'\n\n#gem 'lotusrb', github: 'lotus/lotus'\ngem 'rspec', group: 'development'" > Gemfile;
+  echo -e "# -*- coding: utf-8 -*-\nsource 'https://rubygems.org'\n\n#gem 'lotusrb', github: 'lotus/lotus'\ngem 'pry', group: 'development'\ngem 'rspec', group: 'test'" > Gemfile;
 
   echo -e "--color --format documentation" > .rspec;
   bundle
@@ -75,3 +75,10 @@ alias metric1="rubocop"
 alias metric2="flog"
 alias metric3="flay"
 alias metric4="heckle"
+
+
+rr(){
+  rubocop $@;
+  be rspec $@;
+}
+

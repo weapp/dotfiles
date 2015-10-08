@@ -1,0 +1,8 @@
+s3cmd get s3://wuakistrike/wuaki_no_fk.sql.zip
+rm wuaki_no_fk.sql
+unzip wuaki_no_fk.sql.zip
+echo "DROP DATABASE wuaki_devel" | mysql -u root
+echo "CREATE DATABASE wuaki_devel" | mysql -u root
+mysql -u root wuaki_devel < wuaki_no_fk.sql
+rm wuaki_no_fk.sql
+rm wuaki_no_fk.sql.zip

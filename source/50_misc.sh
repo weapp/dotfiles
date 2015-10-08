@@ -42,7 +42,12 @@ alias redis-keys='echo "KEYS *" | redis-cli'
 
 alias rmf="$(which rm)"
 
-alias rubomodify="git status -s | grep -o '[^ ][^ ][^ ]*' | xargs rubocop"
+alias rubomodify="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs rubocop"
+alias rubodiff="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs rubocop"
+
+alias gc="rubomodify && gc"
+
+alias subl="sublime --add "
 
 function del(){
   mv $1 /tmp

@@ -11,6 +11,7 @@ alias gg='gl --decorate --oneline --graph --date-order --all'
 alias gs='git status'
 alias gst='gs'
 alias gd='git --no-pager diff'
+alias gd1='git --no-pager diff HEAD~1'
 alias gdc='gd --cached'
 alias gm='git commit -m'
 alias gma='git commit -am'
@@ -119,6 +120,7 @@ fi
 
 alias status='git status -s'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gl="gitlog | head"
 alias gitsearch='git rev-list --all | xargs git grep -F'
 alias github="chrome \`git remote -v | grep github.com | grep fetch | head -1 | field 2 | sed 's/git:/http:/g'\`"
 

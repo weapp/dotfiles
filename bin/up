@@ -12,11 +12,23 @@ case "$1" in
   bworker)      cd wuaki_background &&   bundle exec rake resque:work QUEUE=*;;
   backoffice)   cd wuaki_backoffice &&   bundle exec unicorn -p 3020;;
   cerberus)     cd cerberus &&           bundle exec rackup config.ru -p 4000;;
-  nfrac)        cd frac &&               shotgun config.ru -p 6000;;
-  frac)         cd frac &&               shotgun config.ru -p 8080;;
+  nfrac)        cd frac &&               bundle exec shotgun config.ru -p 6000;;
+  frac)         cd frac &&               bundle exec shotgun config.ru;;
+  # frac)         cd frac &&               bundle exec shotgun config.ru -p 8080;;
   frac_worker)  cd frac &&               bundle exec libexec/frac-worker;;
   babieca)      cd babieca &&            foreman start;;
-  gopro)        cd wuaki_deploys &&      git pull; bundle exec cap background:workers production servers:list;;
+
+  gogizmo)      cd wuaki_deploys &&      git pull; bundle exec cap gizmo:api production remote:ssh;;
+  goapi)        cd wuaki_deploys &&      git pull; bundle exec cap apiv2 production remote:ssh;;
+  gopro)        cd wuaki_deploys &&      git pull; bundle exec cap background:workers production remote:ssh;;
+  gofrac)       cd wuaki_deploys &&      git pull; bundle exec cap frac:api production remote:ssh;;
+  gojarvis)     cd wuaki_deploys &&      git pull; bundle exec cap jarvis production remote:ssh;;
+  gofraw)       cd wuaki_deploys &&      git pull; bundle exec cap frac:workers production remote:ssh;;
+  goqafrac)     cd wuaki_deploys &&      git pull; bundle exec cap frac:api qa remote:ssh;;
+  goqafraw)     cd wuaki_deploys &&      git pull; bundle exec cap frac:workers qa remote:ssh;;
+  goqa)         cd wuaki_deploys &&      git pull; bundle exec cap apiv2 qa remote:ssh;;
+
+  deployfracqa) cd wuaki_deploys &&      git pull; BRANCH=master bundle exec cap frac qa deploy;;
 
   #services
   mailcatcher)  mailcatcher -fv;;
@@ -27,7 +39,9 @@ case "$1" in
   elastic)      elasticsearch ;;
   rabbit)       rabbitmq-server ;;
   neo)          neo4j console;;
-  mongo)        makdir -p mongo-data &&  mongod --dbpath mongo-data ;;
+  mongo)        mkdir -p mongo-data &&  mongod --dbpath mongo-data ;;
+
+  schema)       cd gizmo && cp ../zombie/db/schema.rb db/; RAILS_ENV=test bundle exec rake db:reset
 
   # shortcuts
   w) up web;;
@@ -40,6 +54,9 @@ case "$1" in
 
   *) echo "command '$1' not found"
 esac
+
+
+# bundle exec cap jarvis production remote:execute 'bundle exec rails runner -e production \"(-> id { Recipe.find(id).update(aasm_state: %w{closed}) })[1]\"'
 
 
 # if [ "$1" = "wadus" ]
