@@ -2,25 +2,33 @@
 
 cd ~/projects/
 
+echo $'\e[31m[ - '$1$' - ]\e[0m'
 echo -en '\033]2;'$1'\007' # set the title of the window
+# echo -ne $'\e[22t'
+# echo -ne $'\e[23t'
 
 case "$1" in
+  nothing)      cd . ;;
   jarvis)       cd jarvis &&             bundle exec rails s;;
   web)          cd wuaki_web &&          bundle exec unicorn -p 3010;;
-  resque)       cd wuaki_web &&          QUEUE=* bundle exec rake resque:work;;
+  # resque)       cd wuaki_web &&          QUEUE=* bundle exec rake resque:work;;
   background)   cd wuaki_background &&   bundle exec rails s -p 7000;;
-  bworker)      cd wuaki_background &&   bundle exec rake resque:work QUEUE=*;;
+  # bworker)      cd wuaki_background &&   bundle exec rake resque:work QUEUE=*;;
+
+  workers)      cd gizmo;                RESQUE_TERM_TIMEOUT=1 TERM_CHILD=1 VVERBOSE=1 QUEUE=* bundle exec rake resque:work;;
   backoffice)   cd wuaki_backoffice &&   bundle exec unicorn -p 3020;;
   cerberus)     cd cerberus &&           bundle exec rackup config.ru -p 4000;;
+  cerberustest) cd cerberus &&           RACK_ENV=ci bundle exec rackup -p 5000;;
   nfrac)        cd frac &&               bundle exec shotgun config.ru -p 6000;;
   frac)         cd frac &&               bundle exec shotgun config.ru;;
   # frac)         cd frac &&               bundle exec shotgun config.ru -p 8080;;
   frac_worker)  cd frac &&               bundle exec libexec/frac-worker;;
   babieca)      cd babieca &&            foreman start;;
+  enigma)       cd enigma &&             bundle exec rackup;;
 
   gogizmo)      cd wuaki_deploys &&      git pull; bundle exec cap gizmo:api production remote:ssh;;
   goapi)        cd wuaki_deploys &&      git pull; bundle exec cap apiv2 production remote:ssh;;
-  gopro)        cd wuaki_deploys &&      git pull; bundle exec cap background:workers production remote:ssh;;
+  gopro)        cd wuaki_deploys &&      git pull; bundle exec cap zombie:workers production remote:ssh;;
   gofrac)       cd wuaki_deploys &&      git pull; bundle exec cap frac:api production remote:ssh;;
   gojarvis)     cd wuaki_deploys &&      git pull; bundle exec cap jarvis production remote:ssh;;
   gofraw)       cd wuaki_deploys &&      git pull; bundle exec cap frac:workers production remote:ssh;;
@@ -31,17 +39,19 @@ case "$1" in
   deployfracqa) cd wuaki_deploys &&      git pull; BRANCH=master bundle exec cap frac qa deploy;;
 
   #services
-  mailcatcher)  mailcatcher -fv;;
-  nginx)        nginx -g "daemon off;";;
-  redis)        redis-server;;
-  mysql)        mysql.server start;;
+  mailcatcher)                           mailcatcher -fv;;
+  nginx)                                 nginx -g "daemon off;";;
+  redis)                                 redis-server;;
+  mysql)                                 mysql.server start;;
   riak)         cd riak-box &&           vagrant up ;;
   elastic)      elasticsearch ;;
   rabbit)       rabbitmq-server ;;
   neo)          neo4j console;;
   mongo)        mkdir -p mongo-data &&  mongod --dbpath mongo-data ;;
 
-  schema)       cd gizmo && cp ../zombie/db/schema.rb db/; RAILS_ENV=test bundle exec rake db:reset
+  gizmoschema)  cd gizmo && cp ../zombie/db/schema.rb db/; RAILS_ENV=test bundle exec rake db:reset;;
+
+  schema)       cd -; git checkout master -- db/schema.rb; RAILS_ENV=test bundle exec rake db:reset; RAILS_ENV=test bundle exec rake db:migrate ;;
 
   # shortcuts
   w) up web;;
