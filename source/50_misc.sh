@@ -49,6 +49,12 @@ alias rubodiff="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs 
 alias gc="rubomodify && gc"
 
 alias subl="sublime --add "
+ts () {
+  DIR=$(dirname "$1");
+  mkdir -p "$DIR";
+  touch "$1";
+  subl "$1";
+}
 
 alias githubstatus="curl https://status.github.com/api/status.json -s  |ruby -rjson -e \"puts JSON.parse(STDIN.read)['status']\""
 
