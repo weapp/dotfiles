@@ -82,3 +82,10 @@ rr(){
   be rspec $@;
 }
 
+hasgem(){
+  if [ -f 'Gemfile' ]
+  then
+    cat Gemfile | grep $@
+  fi
+}
+

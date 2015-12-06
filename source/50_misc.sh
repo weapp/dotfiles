@@ -62,4 +62,8 @@ function del(){
   mv $1 /tmp
 }
 
+function runhugs(){
+  echo "main" | hugs $1 | tail -n +10 | grep -v "Type :? for help" | sed '$d'
+}
+
 export DOCKER_HOST='tcp://127.0.0.1:2375'
