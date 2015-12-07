@@ -57,6 +57,7 @@ ts () {
 }
 
 alias githubstatus="curl https://status.github.com/api/status.json -s  |ruby -rjson -e \"puts JSON.parse(STDIN.read)['status']\""
+alias tarall="find * -maxdepth 0 -type d -exec tar czf {}.tar.gz {} \;"
 
 function del(){
   mv $1 /tmp
@@ -67,3 +68,8 @@ function runhugs(){
 }
 
 export DOCKER_HOST='tcp://127.0.0.1:2375'
+
+export GOPATH=$HOME/golang
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin

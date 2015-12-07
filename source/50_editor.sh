@@ -1,18 +1,18 @@
 # Editing
 
 if [[ ! "$SSH_TTY" ]] && is_osx; then
-  export EDITOR='subl'
-  export LESSEDIT='subl'
+  export EDITOR='atom'
+  export LESSEDIT='atom'
 else
-  export EDITOR='subl'
+  export EDITOR='atom'
 fi
 
 export VISUAL="$EDITOR"
 
 
-alias openbash='subl ~/.dotfiles/source/'
-alias opendot='subl ~/.dotfiles/'
-alias openup='subl ~/.dotfiles/bin/up'
+alias openbash='$EDITOR ~/.dotfiles/source/'
+alias opendot='$EDITOR ~/.dotfiles/'
+alias openup='$EDITOR ~/.dotfiles/bin/up'
 alias cddot='cd ~/.dotfiles/'
-alias openhost='subl /etc/hosts'
+alias openhost='$EDITOR /etc/hosts'
 alias reloadbash='source ~/.bash_profile'
