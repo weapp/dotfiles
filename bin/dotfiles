@@ -155,6 +155,9 @@ function setdiff() {
 # If this file was being sourced, exit now.
 [[ "$1" == "source" ]] && return
 
+e_header "Sorry, Work in progress"
+exit;
+
 
 ###########################################
 # INTERNAL DOTFILES "INIT" VARS / FUNCTIONS
