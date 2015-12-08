@@ -45,8 +45,9 @@ else
   fi
 fi
 
+alias last_ruby="rbenv install -l | grep -v - | tail -1 | tr -d ' '"
 
-alias vruby2='echo "2.1.2" > .ruby-version;cd .;touch Gemfile;touch .gitignore'
+alias vruby2='echo "$(last_ruby)" > .ruby-version;cd .;touch Gemfile;touch .gitignore'
 
 initruby(){
   vruby2;
@@ -57,7 +58,7 @@ initruby(){
   curl -s 'https://raw.githubusercontent.com/github/gitignore/master/Ruby.gitignore' > .gitignore
   touch 'README.md'
   echo -e "#!/usr/bin/env ruby\n\nrequire 'bundler/setup'\n\nBundler.require(:default)\n" > app.rb;
-  subl .
+  $EDITOR .
 }
 
 gemadd(){
@@ -88,4 +89,3 @@ hasgem(){
     cat Gemfile | grep $@
   fi
 }
-
