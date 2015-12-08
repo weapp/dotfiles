@@ -41,7 +41,7 @@ case "$1" in
   #services
   mailcatcher)                           mailcatcher -fv;;
   nginx)                                 nginx -g "daemon off;";;
-  redis)                                 redis-server - dbfilename ~/projects/dump.rdb;;
+  redis)                                 redis-server;;
   mysql)                                 mysql.server start;;
   riak)         cd riak-box &&           vagrant up ;;
   elastic)      elasticsearch ;;

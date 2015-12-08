@@ -304,6 +304,7 @@ elif [[ "$1" != "restart" ]]; then
 fi
 
 # Add binaries into the path
+[[ -d $HOME/.bin ]] && PATH=$HOME/.bin:$PATH
 [[ -d $DOTFILES/bin ]] && PATH=$DOTFILES/bin:$PATH
 export PATH
 
@@ -320,7 +321,7 @@ backup=
 
 # Execute code for each file in these subdirectories.
 do_stuff "copy"
-do_stuff "link"
+# do_stuff "link"
 # do_stuff "init"
 
 # Alert if backups were made.
