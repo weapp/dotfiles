@@ -1,0 +1,126 @@
+# 1) Download this file as "Brewfile"
+# 2) brew tap Homebrew/bundle
+# 3) brew bundle
+
+tap "caskroom/cask"
+tap "homebrew/completions"
+tap "homebrew/dupes"
+tap "homebrew/fuse"
+tap "homebrew/headonly"
+tap "homebrew/python"
+tap "homebrew/versions"
+tap "thoughtbot/formulae"
+
+# shell and system utils
+brew "git"
+brew "hub"
+brew "wget"
+brew "curl"
+brew "openssl"
+brew "imagemagick"
+brew "terminal-notifier"
+brew "tig"
+brew "graphviz"
+brew "ctags"
+brew "nmap"
+brew "rcm"
+brew 'caskroom/cask/brew-cask'
+
+# RBENV!
+brew "rbenv"
+brew 'readline'
+brew 'ruby-build', args: ['with-libyaml', 'with-openssl']
+brew 'rbenv-aliases'
+brew 'rbenv-binstubs'
+brew 'rbenv-communal-gems'
+brew 'rbenv-ctags'
+brew 'rbenv-default-gems'
+brew 'rbenv-gem-rehash'
+brew 'rbenv-vars'
+
+# other languages
+brew "n"
+# brew "python"
+# brew "numpy"
+brew "go"
+brew "elixir"
+
+# databases
+brew "couchdb"
+cask "java"
+brew "elasticsearch"
+brew "neo4j"
+brew "redis"
+brew "sqlite"
+brew "mongodb"
+brew "riak"
+
+brew "rabbitmq"
+
+# nginx
+# brew "nginx"
+tap "homebrew/nginx"
+# brew "nginx-full", args: ["with-lua-module", "with-set-misc-module"]
+
+# Apps
+cask "atom"
+cask "dropbox"
+cask "telegram"
+cask "appcleaner"
+cask "charles"
+cask "chromecast"
+cask "licecap"
+cask "cyberduck"
+cask "caffeine"
+cask "sourcetree"
+cask "flux"
+cask "cyberduck"
+cask "sequel-pro"
+cask "vlc"
+cask "utorrent"
+cask "spotify"
+cask "skype"
+cask "steam"
+
+cask "macdown"
+cask "myo-connect"
+cask "spectacle"
+cask "macpaw-gemini"
+cask "gitify"
+cask "DaisyDisk"
+cask "cleanmymac"
+cask "android-file-transfer"
+
+# cask "google-drive"
+# cask "google-hangouts"
+# cask "hipchat"
+# cask "iterm2"
+# cask "virtualbox"
+# cask "vagrant"
+# cask "the-unarchiver"
+# cask "flash"
+
+# tap 1syo/myversions || true
+# cask "mysql55-snow-leopard"
+# cask "qt4-mac"
+
+# MySQL Client
+# brew brew "mysql"
+# cask "mysqlworkbench"
+# cask "sequel-pro"
+
+# Text Editor
+
+# cask "sublime-text3"
+# cask "macvim-kaoriya"
+
+# cask "xquartz"
+# cask "alfred"
+# cask "inkscape"
+# cask "picasa"
+#
+# cask "evernote"
+# cask "skitch"
+# cask "xmind"
+#
+# cask "livereload"
