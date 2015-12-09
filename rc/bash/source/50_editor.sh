@@ -10,9 +10,9 @@ fi
 export VISUAL="$EDITOR"
 
 alias e=$EDITOR
-alias openbash='$EDITOR $DOTFILES/source/'
+alias openbash='$EDITOR $DOTFILES/rc/source/'
 alias opendot='$EDITOR $DOTFILES/'
-alias openup='$EDITOR $DOTFILES/bin/up'
+alias openup='$EDITOR $DOTFILES/rc/bin/up'
 alias cddot='cd $DOTFILES/'
 alias openhost='$EDITOR /etc/hosts'
 alias reloadbash='source ~/.bash_profile'

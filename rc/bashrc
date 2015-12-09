@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Where the magic happens.
 export DOTFILES=~/dotfiles
 
@@ -8,34 +10,17 @@ export PATH
 
 # Source all files in "source"
 function src() {
-  local file
-  if [[ "$1" ]]; then
-    source "$DOTFILES/source/$1.sh"
-  else
-    for file in $DOTFILES/source/*; do
-      source "$file"
-    done
-  fi
-}
-
-function dropbox_src() {
-  local file
-  if [[ "$1" ]]; then
-    source "$DOTFILES/source/$1.sh"
-  else
-    for file in $HOME/Dropbox/dotfiles/source/*; do
-      source "$file"
-    done
-  fi
+  for function in ~/.bash/source/*; do
+    source $function
+  done
 }
 
 # Run dotfiles script, then source.
-# function dotfiles() {
-#   $DOTFILES/bin/dotfiles "$@" && src
-# }
+function dotfiles() {
+  rcup && ~/.bin/dotfiles "$@" && src
+}
 
 src
-dropbox_src
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

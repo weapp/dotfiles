@@ -1,7 +1,13 @@
 
 # Git shortcuts
 
-alias g='git'
+g() {
+  if [[ $# -gt 0 ]]; then
+    git "$@"
+  else
+    git status
+  fi
+}
 function ga() { git add "${@:-.}"; } # Add all files by default
 alias gp='git push'
 alias gpa='gp --all'
@@ -116,14 +122,10 @@ if is_osx; then
 fi
 
 
-
-
 alias status='git status -s'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gl="gitlog | head"
 alias gitsearch='git rev-list --all | xargs git grep -F'
-alias github="chrome \`git remote -v | grep github.com | grep fetch | head -1 | field 2 | sed 's/git:/http:/g'\`"
-
 
 function __git_dirty {
   git diff --quiet HEAD &>/dev/null
