@@ -9,7 +9,7 @@ fi
 
 export VISUAL="$EDITOR"
 
-alias editor=$EDITOR
+alias e=$EDITOR
 alias openbash='$EDITOR $DOTFILES/source/'
 alias opendot='$EDITOR $DOTFILES/'
 alias openup='$EDITOR $DOTFILES/bin/up'

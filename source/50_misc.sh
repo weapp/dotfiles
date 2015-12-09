@@ -67,6 +67,8 @@ function runhugs(){
   echo "main" | hugs $1 | tail -n +10 | grep -v "Type :? for help" | sed '$d'
 }
 
+alias path='echo $PATH | tr -s ":" "\n"'
+
 export DOCKER_HOST='tcp://127.0.0.1:2375'
 
 export GOPATH=$HOME/golang

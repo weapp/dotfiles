@@ -12,7 +12,6 @@ source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.bash
 # source /usr/local/etc/bash_completion.d/rabbitmqadmin.bash
 
 # autocompletes
-for file in /usr/local/etc/bash_completion.d/*
-do
+for file in /usr/local/etc/bash_completion.d/*; do
     source $file
 done

@@ -24,17 +24,6 @@ alias l='ls -lAh --color'
 alias l.='ls -d .* --color=auto'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
 
-b() {
-    str=""
-    count=0
-    while [ "$count" -lt "$1" ];
-    do
-        str=$str"../"
-        let count=count+1
-    done
-    cd $str
-}
-
 # Easier navigation: .., ..., -
 alias ..='cd ..'
 alias ...='cd ../..'
