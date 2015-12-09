@@ -4,3 +4,12 @@ vendor
 bower_components/
 node_modules/
 .git/
+.svn
+*~
+.*.swp
+.bundle/config
+.#*
+.env.development
+log/*.log.*
+npm-debug.log
+.projectile

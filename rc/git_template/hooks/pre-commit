@@ -1,0 +1,23 @@
+#!/bin/sh
+
+local_hook="$HOME"/.git_template.local/hooks/pre-commit
+
+if [ -f "$local_hook" ]; then
+  . "$local_hook"
+fi
+
+read -r -d '' fail_words <<- EOM
+  debugger
+  show me the page
+  console.log
+  >>>>>>
+  <<<<<<
+  ======
+  byebug
+EOM
+
+while read -r line
+do
+  grep -q "$line" <(git diff --cached) && echo "Fail words found: '$line' Fix your commit damn it..." && exit 1
+done <<< "$fail_words"
+exit 0

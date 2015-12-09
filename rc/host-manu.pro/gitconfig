@@ -1,9 +1,0 @@
-[user]
-	name = Manuel Albarrán
-	email = weap88@gmail.com
-[color]
-	ui = true
-[core]
-	excludesfile = ~/.gitignore
-[push]
-	default = simple
