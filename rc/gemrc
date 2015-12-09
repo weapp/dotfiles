@@ -4,6 +4,6 @@
 :backtrace: true
 :verbose: true
 bundle: --no-rdoc --no-ri
-gem: --no-rdoc --no-ri
-install: --no-rdoc --no-ri 
+gem: --no-rdoc --no-ri --no-document
+install: --no-rdoc --no-ri
 update:  --no-rdoc --no-ri

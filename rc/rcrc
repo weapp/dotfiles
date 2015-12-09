@@ -1,2 +1,2 @@
 COPY_ALWAYS="ssh/id_* netrc"
-DOTFILES_DIRS="$HOME/dotfiles/rc $HOME/Dropbox/dotfiles/rc"
+DOTFILES_DIRS="$HOME/Dropbox/dotfiles/rc $HOME/dotfiles/rc"
