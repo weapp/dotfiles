@@ -1,10 +1,10 @@
 # Editing
 
 if [[ ! "$SSH_TTY" ]] && is_osx; then
-  export EDITOR='atom'
-  export LESSEDIT='atom'
+  export EDITOR='subl'
+  export LESSEDIT='subl'
 else
-  export EDITOR='atom'
+  export EDITOR='subl'
 fi
 
 export VISUAL="$EDITOR"
