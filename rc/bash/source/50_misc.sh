@@ -69,6 +69,8 @@ function runhugs(){
 
 alias path='echo $PATH | tr -s ":" "\n"'
 
+alias mkdot="mkrc -d $HOME/dotfiles/rc"
+
 export DOCKER_HOST='tcp://127.0.0.1:2375'
 
 export GOPATH=$HOME/golang

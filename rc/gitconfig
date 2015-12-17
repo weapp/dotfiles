@@ -5,6 +5,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	pager = less -F -X
+	editor = sublime -n -w
 [push]
 	default = simple
 [alias]
