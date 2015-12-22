@@ -1,0 +1,78 @@
+{
+	"_dictionary": "Packages/Language - English/_en_US.dic",
+	"_spell_check": true,
+	"draw_centered": false,
+	"draw_white_space": "selection",
+	"enable_hexadecimal_encoding": false,
+	"ensure_newline_at_eof_on_save": true,
+	"español": "comer, beber",
+	"file_exclude_patterns":
+	[
+		".classpath",
+		".project",
+		"*.pyc",
+		"*.pyo",
+		"*.svg",
+		"*.scssc",
+		"sprockets%*",
+		"*.icon",
+		"*.sassc",
+		"screenshot_*.html",
+		"*.ppt",
+		"*.odp",
+		"*.pptx",
+		"*.xpm",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.min.js",
+		".gitkeep"
+	],
+	"fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"temp",
+		"path",
+		"target",
+		".settings",
+		"meta_request",
+		"node_modules",
+		"vendor"
+	],
+	"font_face": "menlo",
+	"font_size": 17.0,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"match_brackets_angle": true,
+	"rulers":
+	[
+		80
+	],
+	"shift_tab_unindent": true,
+	"soda_folder_icons": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"tree_animation_enabled": false,
+	"trim_trailing_white_space_on_save": true
+}
