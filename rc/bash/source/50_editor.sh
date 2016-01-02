@@ -1,10 +1,10 @@
 # Editing
 
 if [[ ! "$SSH_TTY" ]] && is_osx; then
-  export EDITOR='subl'
-  export LESSEDIT='subl'
+  export EDITOR='sublime'
+  export LESSEDIT='sublime'
 else
-  export EDITOR='subl'
+  export EDITOR='sublime'
 fi
 
 export VISUAL="$EDITOR"
