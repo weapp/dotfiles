@@ -3,6 +3,7 @@
 	"_spell_check": true,
 	"_translate_tabs_to_spaces": true,
 	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Theme - Afterglow/Afterglow-monokai.tmTheme",
 	"draw_centered": false,
 	"draw_white_space": "selection",
 	"enable_hexadecimal_encoding": false,
@@ -61,7 +62,7 @@
 		"vendor"
 	],
 	"font_face": "menlo",
-	"font_size": 13.0,
+	"font_size": 14.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -75,8 +76,12 @@
 		100
 	],
 	"shift_tab_unindent": true,
+	"sidebar_no_icon": false,
+	"soda_classic_tabs": true,
 	"soda_folder_icons": true,
 	"tab_size": 2,
+	"tabs_small": true,
+	"theme": "Afterglow.sublime-theme",
 	"tree_animation_enabled": false,
 	"trim_trailing_white_space_on_save": true
 }
