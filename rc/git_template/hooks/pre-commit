@@ -8,16 +8,17 @@ fi
 
 read -r -d '' fail_words <<- EOM
   debugger
+  byebug
+  binding.pry
   show me the page
   console.log
   >>>>>>
   <<<<<<
   ======
-  byebug
 EOM
 
 while read -r line
 do
-  grep -q "$line" <(git diff --cached) && echo "Fail words found: '$line' Fix your commit damn it..." && exit 1
+  (git diff --cached | grep -q "$line") && echo "Fail words found: '$line' Fix your commit damn it..." && exit 1
 done <<< "$fail_words"
 exit 0
