@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+assert.Equal(t, ${1:err}, nil)
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>aerr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.go</scope>
+</snippet>
