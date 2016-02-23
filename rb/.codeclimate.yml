@@ -1,0 +1,9 @@
+---
+languages:
+   Ruby: true
+exclude_paths:
+- config/**/*
+- db/**/*
+- script/**/*
+- spec/**/*
+- vendor/**/*

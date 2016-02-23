@@ -1,0 +1,15 @@
+language: ruby
+cache: bundler
+services:
+  - redis-server
+before_script:
+script: bundle exec rspec spec
+addons:
+  code_climate:
+    # repo_token:
+env:
+  global:
+    - CI=TRAVIS
+  matrix:
+    - WORKER=0
+  fast_finish: true
