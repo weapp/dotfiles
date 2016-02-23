@@ -31,7 +31,8 @@ alias server='python -m SimpleHTTPServer 8000'
 alias rserver='ruby -run -e httpd . -p 8000'
 
 
-export showports="lsof -i -P "
+alias showports="lsof -i -P "
+alias lsports="lsof -i -P "
 alias sshvagrant="ssh 127.0.0.1 -p 2222  -i ~/.vagrant.d/insecure_private_key -l vagrant"
 alias json="python -mjson.tool"
 spy () { lsof -i -P +c 0 +M | grep -i "$1"; }

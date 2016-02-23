@@ -7,14 +7,14 @@ if [ -f "$local_hook" ]; then
 fi
 
 read -r -d '' fail_words <<- EOM
-  debugger
-  byebug
-  binding.pry
+  # debugger
+  # byebug
+  # binding.pry
   show me the page
-  console.log
+  # console.log
   >>>>>>
   <<<<<<
-  ======
+  # ======
 EOM
 
 while read -r line
