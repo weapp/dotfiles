@@ -16,6 +16,7 @@ case "$1" in
   background)   cd wuaki_background &&   bundle exec rails s -p 7000;;
   # bworker)      cd wuaki_background &&   bundle exec rake resque:work QUEUE=*;;
 
+  gizmo)        cd gizmo;                bundle exec rails s;;
   workers)      cd gizmo;                RESQUE_TERM_TIMEOUT=1 TERM_CHILD=1 VVERBOSE=1 QUEUE=* bundle exec rake resque:work;;
   backoffice)   cd wuaki_backoffice &&   bundle exec unicorn -p 3020;;
   cerberus)     cd cerberus &&           bundle exec rackup config.ru -p 4000;;
@@ -25,16 +26,25 @@ case "$1" in
   # frac)         cd frac &&               bundle exec shotgun config.ru -p 8080;;
   frac_worker)  cd frac &&               bundle exec libexec/frac-worker;;
   babieca)      cd babieca &&            foreman start;;
-  enigma)       cd enigma &&             bundle exec rackup;;
+  enigma)       cd enigma &&             ENIGMA_KEY="1deb968be6789318756b704c8b44f653a93f19e4e951b4717d08520505385d09" bundle exec rackup;;
 
+  gogizmopl)    cd wuaki_deploys &&      git pull; bundle exec cap gizmo:api playground remote:ssh;;
+  gogizmoqa)    cd wuaki_deploys &&      git pull; bundle exec cap gizmo:api qa remote:ssh;;
   gogizmo)      cd wuaki_deploys &&      git pull; bundle exec cap gizmo:api production remote:ssh;;
+  gogizmow)     cd wuaki_deploys &&      git pull; bundle exec cap gizmo:workers production remote:ssh;;
   goapi)        cd wuaki_deploys &&      git pull; bundle exec cap apiv2 production remote:ssh;;
   gopro)        cd wuaki_deploys &&      git pull; bundle exec cap zombie:workers production remote:ssh;;
   gofrac)       cd wuaki_deploys &&      git pull; bundle exec cap frac:api production remote:ssh;;
   gojarvis)     cd wuaki_deploys &&      git pull; bundle exec cap jarvis production remote:ssh;;
+  jarvisc)      cd wuaki_deploys &&      git pull; bundle exec cap jarvis production remote:console;;
   gofraw)       cd wuaki_deploys &&      git pull; bundle exec cap frac:workers production remote:ssh;;
+
   goqafrac)     cd wuaki_deploys &&      git pull; bundle exec cap frac:api qa remote:ssh;;
   goqafraw)     cd wuaki_deploys &&      git pull; bundle exec cap frac:workers qa remote:ssh;;
+
+  goplaygroundfrac)     cd wuaki_deploys &&      git pull; bundle exec cap frac:api playground remote:ssh;;
+  goplaygroundfraw)     cd wuaki_deploys &&      git pull; bundle exec cap frac:workers playground remote:ssh;;
+
   goqa)         cd wuaki_deploys &&      git pull; bundle exec cap apiv2 qa remote:ssh;;
 
 
@@ -52,6 +62,7 @@ case "$1" in
   mongo)        mkdir -p mongo-data &&  mongod --dbpath mongo-data ;;
 
   gizmoschema)  cd gizmo && cp ../zombie/db/schema.rb db/; RAILS_ENV=test bundle exec rake db:reset;;
+  orzonschema)  cd gizmo && cp ../zombie/db/schema.rb db/; RAILS_ENV=test bundle exec rake db:reset;;
 
   schema)       cd -; git checkout master -- db/schema.rb; RAILS_ENV=test bundle exec rake db:reset; RAILS_ENV=test bundle exec rake db:migrate ;;
 
@@ -75,3 +86,9 @@ esac
 # then
 #   echo "hey"
 # fi
+
+# BRANCH=master be cap frac staging deploy
+# BRANCH=master be cap gizmo staging deploy
+
+
+# bundle exec cap gizmo:api staging remote:ssh

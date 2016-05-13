@@ -39,6 +39,7 @@ spy () { lsof -i -P +c 0 +M | grep -i "$1"; }
 alias grep='grep --color=auto'
 
 
+
 alias redis-keys='echo "KEYS *" | redis-cli'
 
 
@@ -46,6 +47,9 @@ alias rmf="$(which rm)"
 
 alias rubomodify="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs rubocop"
 alias rubodiff="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs rubocop"
+
+
+alias rubobranch='git diff master --numstat | cut -f 3 | grep "\.rb$" | xargs ls 2>/dev/null | xargs rubocop -a'
 
 alias gc="rubomodify && gc"
 

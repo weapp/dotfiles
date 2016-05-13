@@ -18,6 +18,7 @@ if defined?(Rails)
     require "console_app"
     require "console_with_helpers"
   end
+
 end
 
 def y(obj)
@@ -26,4 +27,21 @@ end
 
 def bm(&block)
   Benchmark.measure &block
+end
+
+def c(*args)
+  begin
+    if defined?(Rails)
+      require 'rails_helper'
+    end
+    require 'spec_helper'
+    FactoryGirl.create(*args)
+  rescue LoadError => e
+    $:.unshift "./spec"
+    if defined?(Rails)
+      require 'rails_helper'
+    end
+    require 'spec_helper'
+    FactoryGirl.create(*args)
+  end
 end
