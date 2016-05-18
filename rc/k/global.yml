@@ -1,0 +1,8 @@
+directory: ~/projects/
+commands:
+  default: up
+  ls: tree .
+  pwd: pwd
+  cd: cd .
+env:
+  K: "true"

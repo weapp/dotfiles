@@ -1,0 +1,3 @@
+commands:
+  default: up
+  up: nginx -g "daemon off;"

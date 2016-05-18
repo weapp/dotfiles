@@ -1,0 +1,4 @@
+commands:
+  default: up
+  up: gemstash start
+directory: gmstash

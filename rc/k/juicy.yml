@@ -1,0 +1,6 @@
+commands:
+  default: up
+  up: be bin/boto s
+  s: be bin/boto s
+  c: be bin/boto c
+directory: juicy

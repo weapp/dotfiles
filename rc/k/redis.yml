@@ -1,0 +1,4 @@
+commands:
+  default: up
+  up: redis-server
+  down: kill "$(ps axo pid,command | grep redis-server | grep -v grep | grep -o "^[0-9][0-9]*")"
