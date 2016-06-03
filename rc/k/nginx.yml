@@ -1,3 +1,5 @@
 commands:
   default: up
-  up: nginx -g "daemon off;"
+  up: sudo nginx -g "daemon off;"
+  open: $EDITOR nginx.conf
+directory: /usr/local/etc/nginx

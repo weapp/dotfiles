@@ -49,7 +49,7 @@ alias rubomodify="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xarg
 alias rubodiff="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs rubocop"
 
 
-alias rubobranch='git diff master --numstat | cut -f 3 | grep "\.rb$" | xargs ls 2>/dev/null | xargs rubocop -a'
+alias rubobranch='git diff master --numstat | cut -f 3 | grep "\.rb$" | xargs ls 2>/dev/null | RBENV_VERSION=2.3.0 xargs rubocop -a'
 
 alias gc="rubomodify && gc"
 

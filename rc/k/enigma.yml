@@ -1,0 +1,6 @@
+commands:
+  default: up
+  up: bundle exec rackup
+directory: enigma
+env:
+  ENIGMA_KEY: "1deb968be6789318756b704c8b44f653a93f19e4e951b4717d08520505385d09"

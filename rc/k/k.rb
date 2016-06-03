@@ -23,6 +23,7 @@ def fetch(command_path, commands, vars={})
 end
 
 service_name, *command_path = *ARGV
+service_name ||= "k"
 
 global = YAML.load(File.read("global.yml")) rescue {}
 service = YAML.load(File.read("#{service_name}.yml"))
