@@ -13,6 +13,7 @@
 	[
 		".classpath",
 		".project",
+		"*.beam",
 		"*.pyc",
 		"*.pyo",
 		"*.svg",
@@ -59,7 +60,9 @@
 		".settings",
 		"meta_request",
 		"node_modules",
-		"vendor"
+		"vendor",
+		"deps",
+		"_build"
 	],
 	"font_face": "menlo",
 	"font_size": 14.0,

@@ -1,3 +1,7 @@
+__k_service (){
+  echo $K_SERVICE
+}
+
 bash_prompt() {
   local NONE="\[\033[0m\]"    # unsets color to term's fg color
 
@@ -34,7 +38,7 @@ bash_prompt() {
   local UC=$W                 # user's color
   [ $UID -eq "0" ] && UC=$R   # root's color
 
-  PS1="$B\$(__ruby_ps)$Y$W:$EMY\w$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE} $ "
+  PS1="$B\$(__ruby_ps)$W:$G\$(__k_service)$W:$EMY\w$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE} $ "
 }
 
 bash_prompt

@@ -1,8 +1,10 @@
 commands:
   default: gizmo
-  :project:
+  $project:
     default: production
-    :env:
-      default: api
-      :role: git pull; bundle exec cap <%=project%>:<%=role%> <%=env%> remote:ssh
+    $env:
+      default: '<%= %w(gizmo frac).include?(project) ? "api" : false %>'
+      $role:
+        - git pull
+        - 'bundle exec cap <%=project%><%=role != "false" ? ":#{role}" : ""%> <%=env%> remote:ssh'
 directory: wuaki_deploys

@@ -4,5 +4,8 @@ commands:
   ls: tree .
   pwd: pwd
   cd: cd .
+  set: export K_SERVICE=<%= SERVICE %>
+  unset: unset K_SERVICE
+  edit: sublime .
 env:
   K: "true"

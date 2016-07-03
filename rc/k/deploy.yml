@@ -1,7 +1,10 @@
 commands:
   default: gizmo
-  :project:
-    :env:
-      default: master
-      :branch: git pull; BRANCH=<%=branch%> bundle exec cap <%=project%> <%=env%> deploy
+  $project:
+    default: staging
+    $env:
+      default: '<%= ENV["BRANCH"] || "master" %>'
+      $branch:
+        - git pull
+        - BRANCH=<%=branch%> bundle exec cap <%=project%> <%=env%> deploy
 directory: wuaki_deploys

@@ -1,1 +1,8 @@
 directory: ~/.k
+commands:
+  default: cd
+  set: unset K_SERVICE
+
+  rcup:
+    - mkrc *.yml
+    - rcup
