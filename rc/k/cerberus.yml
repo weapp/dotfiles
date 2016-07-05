@@ -1,0 +1,5 @@
+commands:
+  default: up
+  up: bundle exec rackup config.ru -p 4000
+  test: RACK_ENV=ci bundle exec rackup -p 5000
+directory: cerberus

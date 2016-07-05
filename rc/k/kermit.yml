@@ -1,0 +1,4 @@
+commands:
+  default: up
+  up: bundle exec rails s -p 3010
+directory: kermit
