@@ -8,9 +8,20 @@ def erb(template, vars)
   ERB.new(template.to_s).result(OpenStruct.new(vars).instance_eval { binding })
 end
 
+Cmd = Struct.new(:to_s, :commands)
+
+def debug(var)
+  STDERR.puts "-" *  80
+  STDERR.puts var.inspect
+  STDERR.puts "-" *  80
+  STDERR.puts
+end
+
 def fetch(command_path, commands, vars={})
   command_name = command_path.shift || commands["default"]
-  return [":"] unless command_name
+  unless command_name
+    return [Cmd.new("help", commands)]
+  end
   command = commands[command_name]
   if !command && commands.keys
     command = commands.keys.detect { |k| k.start_with?("$") }
@@ -18,8 +29,9 @@ def fetch(command_path, commands, vars={})
     vars[command[1..-1]] = erb(command_name, vars)
     command = commands[command]
   end
+
   return fetch(command_path, command, vars) if command.is_a? Hash
-  Array(command).map{ |c| erb(c, vars)}
+  Array(command).map{ |c| c.is_a?(Cmd) ? c : "#{erb(c, vars)} #{command_path.shelljoin}"}
 end
 
 ## service_name and command
@@ -63,5 +75,24 @@ commands = fetch(command_path, commands)
 title_name = "echo -en '\\033]2;#{service_name.shellescape}\\007'"
 
 red_name = "echo $'\\e[31m[ #{service_name.shellescape} | #{directory} $ #{commands.join("; ")} ]\\e[0m'"
-commands_with_env = commands.map { |c| "#{env}#{c}" }.join("; ")
-puts "#{red_name};#{title_name};cd #{directory};#{commands_with_env}"
+
+
+commands_with_env = commands.map do |c|
+  if c.is_a?(Cmd)
+    STDERR.puts "\e[31mIncomplete command, show one of the following options:\e[0m"
+    STDERR.puts "\e[36m#{c.commands.to_yaml}\e[0m"
+    puts ":"
+    exit
+  end
+  "#{env}#{c}"
+end.join("; ")
+
+script = [
+  "#{red_name}",
+  "#{title_name}",
+  "mkdir -p #{directory}",
+  "cd #{directory}",
+  "#{commands_with_env}"
+].join(";\n")
+
+puts script

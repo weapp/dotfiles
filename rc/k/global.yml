@@ -1,7 +1,9 @@
 directory: ~/projects/
 commands:
   default: up
-  ls: tree .
+  ls:
+    default: "."
+    $dir: tree <%= dir %>
   pwd: pwd
   cd: cd .
   set: export K_SERVICE=<%= SERVICE %>

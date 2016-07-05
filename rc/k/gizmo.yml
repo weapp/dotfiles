@@ -2,5 +2,10 @@ commands:
   default: up
   up: be rails s
   open: open http://github.com/wuakitv/gizmo
-  schema: ./script/update_schema; RAILS_ENV=test bundle exec rake db:reset
+  schema:
+    - ./script/update_schema
+    - RAILS_ENV=test bundle exec rake db:reset
+    # env:
+    #   RAILS_ENV: test
+
 directory: gizmo
