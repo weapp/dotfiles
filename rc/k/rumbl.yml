@@ -1,0 +1,25 @@
+commands:
+  default: set
+  editk: sublime ~/.k/rumbl.yml
+
+  setup: mix phoenix.new rumbl
+  server: mix phoenix.server
+  console: iex -S mix
+  dbcreate: mix ecto.create
+  open: open http://localhost:4000
+  migration:
+    $name: mix ecto.gen.migration <%= name %>
+  migrate: mix ecto.migrate
+  rollback: mix ecto.rollback
+  routes: mix phoenix.routes
+  deps: mix deps.get
+  seeds: mix run priv/repo/seeds.exs
+  test: mix test
+
+  gen:
+    user: mix ecto.gen.migration create_user
+    video: mix phoenix.gen.html Video videos user_id:references:users url:string title:string description:text
+    category: mix phoenix.gen.model Category categories name:string
+    category_video: mix ecto.gen.migration add_category_id_to_video
+
+directory: rumbl
