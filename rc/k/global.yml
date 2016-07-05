@@ -1,4 +1,4 @@
-directory: ~/projects/
+base: ~/projects/
 commands:
   default: up
   ls:

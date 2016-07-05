@@ -12,7 +12,7 @@ Cmd = Struct.new(:to_s, :commands)
 
 def debug(var)
   STDERR.puts "-" *  80
-  STDERR.puts var.inspect
+  STDERR.puts var
   STDERR.puts "-" *  80
   STDERR.puts
 end
@@ -50,13 +50,31 @@ SERVICE = service_name
 global = YAML.load(File.read("global.yml")) rescue {}
 service = YAML.load(File.read("#{service_name}.yml"))
 
+class Table
+  def initialize(table)
+    @table = table
+  end
+
+  def fetch(key, default)
+    if @table.count == 0
+      default
+    else
+      head, *tail = @table
+      head.fetch(key) { Table.new(tail).fetch(key, default) }
+    end
+  end
+end
+
+table = Table.new([service, global])
+
 if service["alias"]
   service_name = service["alias"]
   service = YAML.load(File.read("#{service_name}.yml"))
 end
 
-base = File.expand_path(global.fetch("directory", "."), "~")
-directory = File.expand_path(service.fetch("directory", "."), base).shellescape
+base = File.expand_path(table.fetch("base", "."), "~")
+dir = table.fetch("directory", ".")
+directory = dir ? File.expand_path(dir, base).shellescape : '-'
 
 env = global.fetch("env", {}).merge(service.fetch("env", {}))
   .map { |key, value| "#{key}=#{value.shellescape} "}.join
@@ -89,10 +107,12 @@ end.join("; ")
 
 script = [
   "#{red_name}",
-  "#{title_name}",
-  "mkdir -p #{directory}",
-  "cd #{directory}",
+  service_name == "k" ? nil : "#{title_name}",
+  directory == "-" ? nil : "mkdir -p #{directory}",
+  "cd #{directory} > /dev/null",
   "#{commands_with_env}"
-].join(";\n")
+].compact.join(";\n")
+
+debug script
 
 puts script
