@@ -1,2 +1,4 @@
 ---
-:bind: tcp://0.0.0.0:4242
+:base_path: "/Users/manuel.albarran/.gemstash"
+:cache_type: memory
+:db_adapter: sqlite3
