@@ -5,3 +5,6 @@ ForwardAgent yes
 
 # Automatically add all common hosts to the host file as they are connected to.
 StrictHostKeyChecking no
+
+# keep SSH connections alive
+ServerAliveInterval 10

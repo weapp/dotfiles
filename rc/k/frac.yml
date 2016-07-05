@@ -4,4 +4,5 @@ commands:
   resetworkers:
     - cd ../wuaki_deploys
     - bundle exec cap frac:workers production frac_queue:restart
+  remote: be rspec spec/remote/ --tag remote
 directory: frac
