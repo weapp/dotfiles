@@ -3,4 +3,7 @@ commands:
   up: be rails s
   resetworkers: cd ../wuaki_deploys; bundle exec cap frac:workers production frac_queue:restart
   remote: be rspec spec/remote/ --tag remote
+  # RACK_ENV=playground bundle exec script/console
+  # require 'mappers/transaction_mapper'
+  # TransactionMapper.new.get('key')
 directory: frac
