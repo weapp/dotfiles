@@ -1,0 +1,6 @@
+commands:
+  clone:
+    - cd ..
+    - git clone git@github.com:weapp/xfiles.git
+directory: ~/xfiles
+

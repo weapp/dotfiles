@@ -1,0 +1,4 @@
+commands:
+  default: up
+  up: postgres -D /usr/local/var/postgres
+  console: psql -d template1 # CREATE ROLE postgres LOGIN CREATEDB;
