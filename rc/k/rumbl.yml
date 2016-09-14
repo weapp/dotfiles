@@ -2,7 +2,9 @@ commands:
   default: set
   editk: sublime ~/.k/rumbl.yml
 
-  setup: mix phoenix.new rumbl
+  setup:
+    - cd ..
+    - mix phoenix.new rumbl
   server: mix phoenix.server
   console: iex -S mix
   dbcreate: mix ecto.create
