@@ -38,7 +38,7 @@ bash_prompt() {
   local UC=$W                 # user's color
   [ $UID -eq "0" ] && UC=$R   # root's color
 
-  PS1="$B\$(__ruby_ps)$W:$G\$(__k_service)$W:$EMY\w$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE} $ "
+  PS1="\n$B\$(__ruby_ps)$W:$G\$(__k_service)$W:$EMY\w$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE} $ "
 }
 
 bash_prompt

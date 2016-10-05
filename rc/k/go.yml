@@ -3,7 +3,7 @@ commands:
   $project:
     default: production
     $env:
-      default: '<%= %w(gizmo frac).include?(project) ? "api" : false %>'
+      default: '<%= %w(gizmo frac zombie).include?(project) ? "api" : false %>'
       $role:
         - git pull
         - 'bundle exec cap <%=project%><%=role != "false" ? ":#{role}" : ""%> <%=env%> remote:ssh'

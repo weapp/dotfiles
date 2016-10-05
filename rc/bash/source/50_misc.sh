@@ -50,6 +50,8 @@ alias rubodiff="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs 
 
 
 alias rubobranch='git diff master --numstat | cut -f 3 | grep "\.rb$" | xargs ls 2>/dev/null | RBENV_VERSION=2.3.0 xargs rubocop -a'
+alias tr='RBENV_VERSION=2.3.0 travis'
+
 
 alias gc="rubomodify && gc"
 
