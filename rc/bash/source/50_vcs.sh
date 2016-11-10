@@ -132,7 +132,9 @@ function __git_dirty {
   [ $? == 1 ] && echo "!"
 }
 
+alias __git_ps1_="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
+
 function __git_branch {
-  __git_ps1 " %s"
+  __git_ps1_ " %s"
 }
 

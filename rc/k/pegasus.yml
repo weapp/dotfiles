@@ -27,5 +27,6 @@ commands:
     # video: mix phoenix.gen.html Video videos user_id:references:users url:string title:string description:text
     # category: mix phoenix.gen.model Category categories name:string
     # category_video: mix ecto.gen.migration add_category_id_to_video
+    status: mix phoenix.gen.json Status status status:string
 
 directory: pegasus
