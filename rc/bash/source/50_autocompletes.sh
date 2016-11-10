@@ -1,4 +1,4 @@
-source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.bash
+# source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.bash
 # source ~/.rbenv/completions/rbenv.bash
 
 # source /usr/local/etc/bash_completion.d/git-completion.bash
