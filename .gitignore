@@ -17,3 +17,7 @@
 
 *.pem
 *_rsa*
+
+.gitconfig
+rc/ssh/config
+rc/gitconfig

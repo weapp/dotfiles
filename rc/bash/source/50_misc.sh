@@ -49,7 +49,7 @@ alias rubomodify="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xarg
 alias rubodiff="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs rubocop"
 
 
-alias rubobranch='git diff master --numstat | cut -f 3 | grep "\.rb$" | xargs ls 2>/dev/null | RBENV_VERSION=2.3.0 xargs rubocop -a'
+alias rubobranch='git diff master --numstat | cut -f 3 | grep "\.rb$" | xargs ls 2>/dev/null | xargs rubocop -a'
 alias tr='RBENV_VERSION=2.3.0 travis'
 
 
@@ -80,7 +80,12 @@ alias mkdot="mkrc -d $HOME/dotfiles/rc"
 
 export DOCKER_HOST='tcp://127.0.0.1:2375'
 
-export GOPATH=$HOME/golang
+
+
+
+export GOPATH="/Users/manu/projects/go"
+# PATH=$PATH:$GOPATH/bin
+# export GOPATH=$HOME/golang
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
