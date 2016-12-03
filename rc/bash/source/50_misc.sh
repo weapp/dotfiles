@@ -63,6 +63,8 @@ ts () {
   $EDITOR "$1";
 }
 
+alias myip="curl http://whatismyip.akamai.com"
+alias myip6="curl http://ipv6.whatismyip.akamai.com"
 alias githubstatus="curl https://status.github.com/api/status.json -s  |ruby -rjson -e \"puts JSON.parse(STDIN.read)['status']\""
 alias tarall="find * -maxdepth 0 -type d -exec tar czf {}.tar.gz {} \;"
 
@@ -91,3 +93,4 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 k () { cd ~/.k; eval "$(ruby k.rb "$@")"; }
+
