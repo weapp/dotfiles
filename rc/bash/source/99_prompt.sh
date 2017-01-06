@@ -3,6 +3,8 @@ __k_service (){
 }
 
 bash_prompt() {
+  local EXIT="$?"
+
   local NONE="\[\033[0m\]"    # unsets color to term's fg color
 
   # regular colors
@@ -35,11 +37,19 @@ bash_prompt() {
   local BGC="\[\033[46m\]"
   local BGW="\[\033[47m\]"
 
-  local UC=$W                 # user's color
-  [ $UID -eq "0" ] && UC=$R   # root's color
+  # local UC=$W                 # user's color
+  # [ $UID -eq "0" ] && UC=$R   # root's color
 
-  PS1="\n$B\$(__ruby_ps)$W:$G\$(__k_service)$W:$EMY\w$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE} $ "
+ if [ $EXIT != 0 ]; then
+     local DU="($EXIT)$EMR\w"
+ else
+     local DU="($EXIT)$EMY\w"
+ fi
+
+  PS1="\n$B\$(__ruby_ps)$W:$G\$(__k_service)$W:$DU$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE} $ "
 }
 
-bash_prompt
-unset bash_prompt
+# bash_prompt
+# unset bash_prompt
+
+PROMPT_COMMAND=bash_prompt # Func to gen PS1 after CMDs
