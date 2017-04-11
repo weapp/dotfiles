@@ -1,0 +1,4 @@
+commands:
+  plookupd: "command -v nsqlookupd && nsqlookupd"
+  d: "command -v nsqd && nsqd --lookupd-tcp-address=localhost:4160 --broadcast-address=127.0.0.1"
+  admin: "command -v nsqadmin && nsqadmin --lookupd-http-address=localhost:4161"

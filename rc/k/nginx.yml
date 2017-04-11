@@ -3,3 +3,5 @@ commands:
   up: sudo nginx -g "daemon off;"
   open: $EDITOR nginx.conf
 directory: /usr/local/etc/nginx
+
+#command -v nginx && nginx -c $PWD/nginx.conf > /dev/null

@@ -1,14 +1,20 @@
 source "https://rubygems.org"
 
-gem "pry", group: %w(development test)
+# gem "foxy"
+# gem "boto"
+gem "dotenv"
+gem "colorize"
+# gem "htmlbeautifier"
+# gem "ruby-progressbar"
+# gem "iconv"
+# gem "rchardet"
+
+group :development, :test do
+  gem "pry"
+  gem "pry-byebug"
+end
 
 group "test" do
   gem "rspec"
-  gem "rspec-its"
   gem "simplecov", require: false
-end
-
-group "development" do
-  gem "guard-rspec", require: false
-  gem "guard-rubocop", require: false
 end

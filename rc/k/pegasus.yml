@@ -29,4 +29,4 @@ commands:
     # category_video: mix ecto.gen.migration add_category_id_to_video
     status: mix phoenix.gen.json Status status status:string
 
-directory: pegasus
+directory: el/pegasus

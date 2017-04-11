@@ -27,4 +27,4 @@ commands:
     # category: mix phoenix.gen.model Category categories name:string
     # category_video: mix ecto.gen.migration add_category_id_to_video
 
-directory: banana
+directory: el/banana

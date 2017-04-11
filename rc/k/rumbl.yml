@@ -5,6 +5,17 @@ commands:
   setup:
     - cd ..
     - mix phoenix.new rumbl
+  npm:
+    setup:
+      # - npm init
+      - npm install --save react react-dom react-redux redux redux-thunk redux-logger redux-devtools
+      - npm install --save-dev webpack webpack-manifest-plugin css-loader style-loader extract-text-webpack-plugin copy-webpack-plugin babel-loader babel-core babel-preset-es2015 babel-preset-react
+
+  webpack:
+    setup: wget https://raw.githubusercontent.com/slashdotdash/phoenix-react-redux-example/master/webpack.config.js
+    start: node ./node_modules/webpack/bin/webpack.js  --watch --color
+    # start: webpack  --watch --color
+
   server: mix phoenix.server
   console: iex -S mix
   dbcreate: mix ecto.create
@@ -24,4 +35,4 @@ commands:
     category: mix phoenix.gen.model Category categories name:string
     category_video: mix ecto.gen.migration add_category_id_to_video
 
-directory: rumbl
+directory: el/rumbl

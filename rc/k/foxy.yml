@@ -1,4 +1,4 @@
 commands:
   default: cd
   cd: cd .
-directory: foxyrb
+directory: rb/foxyrb
