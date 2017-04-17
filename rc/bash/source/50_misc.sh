@@ -50,6 +50,14 @@ alias rubodiff="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs 
 
 
 alias rubobranch='git diff master --numstat | cut -f 3 | grep "\.rb$" | xargs ls 2>/dev/null | xargs rubocop -a'
+
+
+alias rbcm="git diff --name-only | grep '.rb' | xargs ls 2>/dev/null | xargs rubocop"
+alias rbcc="git diff --cached --name-only | grep '.rb' | xargs ls 2>/dev/null | xargs rubocop"
+alias rspecm="git diff --name-only | grep '.rb' | xargs ls 2>/dev/null | xargs bundle exec rspec"
+alias rspecc="git diff --cached --name-only | grep '.rb' | xargs ls 2>/dev/null | xargs bundle exec rspec"
+
+
 alias tr='RBENV_VERSION=2.3.0 travis'
 
 
