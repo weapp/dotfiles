@@ -35,6 +35,10 @@ alias showports="lsof -i -P "
 alias lsports="lsof -i -P "
 alias sshvagrant="ssh 127.0.0.1 -p 2222  -i ~/.vagrant.d/insecure_private_key -l vagrant"
 alias json="python -mjson.tool"
+alias xml="xmllint --format -"
+alias urldecode='python -c "import sys, urllib as ul; \
+    print ul.unquote_plus(sys.argv[1])"'
+alias pastexml="pbpaste | xmllint --format -"
 spy () { lsof -i -P +c 0 +M | grep -i "$1"; }
 alias grep='grep --color=auto'
 
@@ -52,13 +56,14 @@ alias rubodiff="git status -s | grep -o '[^ \?][^ \?][^ \?]*' | grep rb | xargs 
 alias rubobranch='git diff master --numstat | cut -f 3 | grep "\.rb$" | xargs ls 2>/dev/null | xargs rubocop -a'
 
 
+
 alias rbcm="git diff --name-only | grep '.rb' | xargs ls 2>/dev/null | xargs rubocop"
 alias rbcc="git diff --cached --name-only | grep '.rb' | xargs ls 2>/dev/null | xargs rubocop"
 alias rspecm="git diff --name-only | grep '.rb' | xargs ls 2>/dev/null | xargs bundle exec rspec"
 alias rspecc="git diff --cached --name-only | grep '.rb' | xargs ls 2>/dev/null | xargs bundle exec rspec"
 
 
-alias tr='RBENV_VERSION=2.3.0 travis'
+# alias tr='RBENV_VERSION=2.3.0 travis'
 
 
 alias gc="rubomodify && gc"
@@ -88,8 +93,18 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 alias mkdot="mkrc -d $HOME/dotfiles/rc"
 
-export DOCKER_HOST='tcp://127.0.0.1:2375'
+# export DOCKER_HOST='tcp://127.0.0.1:2375'
 
+
+alias deploy='echo "
+0️⃣  git push origin master:production
+
+1️⃣  ssh eu-dev
+
+2️⃣  cd ~/workspace/cabify_server && git checkout production && git pull && bundle
+
+3️⃣  cap production deploy
+"'
 
 
 
