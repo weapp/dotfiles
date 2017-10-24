@@ -24,17 +24,14 @@ else
   then
     export PATH="$HOME/.rbenv/bin:$PATH"
     export PATH=~/.rbenv/shims:$PATH
-    eval "$(rbenv init -)"
 
 
     # prompt with ruby version
     # rbenv version | sed -e 's/ .*//'
     __ruby_ps ()
     {
-      rbenv_ruby_version=`rbenv version | sed -e 's/ .*//'`
-      printf $rbenv_ruby_version
+      echo ""
     }
-
   else
     __ruby_ps ()
     {

@@ -9,9 +9,7 @@
 # source /usr/local/etc/bash_completion.d/rake
 # source /usr/local/etc/bash_completion.d/ruby
 # source /usr/local/etc/bash_completion.d/vagrant
-# source /usr/local/etc/bash_completion.d/rabbitmqadmin.bash
+# source /usr/local/etc/bash_
 
 # autocompletes
-for file in /usr/local/etc/bash_completion.d/*; do
-    source $file
-done
+

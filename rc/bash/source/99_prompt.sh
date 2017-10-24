@@ -46,7 +46,7 @@ bash_prompt() {
      local DU="($EXIT)$EMY\w"
  fi
 
-  PS1="\n$B\$(__ruby_ps)$W:$G\$(__k_service)$W:$DU$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE} $ "
+  PS1="\n$B\$W:$G\$(__k_service)$W:$DU$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE} $ "
 }
 
 # bash_prompt

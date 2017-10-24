@@ -40,3 +40,6 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[user]
+	email = weap88@gmail.com
+	name = Manu
