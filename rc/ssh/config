@@ -1,4 +1,6 @@
 Host *
+  UseKeychain yes
+  AddKeysToAgent yes
 
 # Forward ssh agent to the remote machine.
 ForwardAgent yes
