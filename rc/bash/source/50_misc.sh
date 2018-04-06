@@ -97,7 +97,7 @@ alias mkdot="mkrc -d $HOME/dotfiles/rc"
 
 
 alias deploy='echo "
-0️⃣  git push origin master:production
+0️⃣  cd ~/projects/cab/ && git checkout master && git pull && git push origin master:production
 
 1️⃣  ssh eu-dev
 
