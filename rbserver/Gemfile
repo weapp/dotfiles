@@ -1,0 +1,22 @@
+source "https://rubygems.org"
+
+# gem "foxy"
+# gem "boto"
+gem "dotenv"
+gem "colorize"
+gem "sinatra"
+# gem "htmlbeautifier"
+# gem "ruby-progressbar"
+# gem "iconv"
+# gem "rchardet"
+
+group :development, :test do
+  gem "rb-readline"
+  gem "pry"
+  gem "pry-byebug"
+end
+
+group "test" do
+  gem "rspec"
+  gem "simplecov", require: false
+end

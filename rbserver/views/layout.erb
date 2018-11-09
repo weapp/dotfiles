@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <!-- <link rel="stylesheet" href="/assets/app.css"> -->
+    <!-- <script src="/assets/app.js"></script> -->
+    <script>
+      (() => {
+        // conventions:
+        // $var = $()  is a node
+        // $$var = $$()  is an array of nodes
+        // $_var = is a node or an array of nodes
+
+        // ------------ helpers ------------
+        const toArray = it => Array.prototype.slice.call(it, 0)
+        const D = document
+        const swap_args = (f) => (a, b) => (typeof b === "undefined") ? f(a) : f(b, a)
+        const forEach = (arr, fn) => Array.isArray(arr) ? arr.forEach(fn) : fn(arr)
+
+        const $$ = swap_args((q, $d=D) => toArray($d.querySelectorAll(q)))
+        const $ = swap_args((q, $d=D) => $d.querySelector(q))
+        const byId = q => D.getElementById(q)
+        const parent = ($d, p=1) => p == 0 ? $d : parent($d.parentElement, p-1)
+
+        const on = ($_e, e, f) => forEach($_e, $e => $e.addEventListener(e, (event) => f($e, event)))
+        const addClass = ($_e, cls) => forEach($_e, $e => $e.classList.add(cls))
+        const remClass = ($_e, cls) => forEach($_e, $e => $e.classList.remove(cls))
+        const togClass = ($_e, cls) => forEach($_e, $e => $e.classList.toggle(cls))
+        const target = ($e) => byId($e.dataset.target)
+
+        const live = (() => {
+          let __f = ($$arr, $e, event, cb) => {
+            // match actual?
+            if (!$e || $$arr.indexOf($e) > -1) $e && cb($e, event)
+            // find_parents
+            else __f($$arr, parent($e), event, cb)
+          }
+          let _f = ($$arr, $e, event, cb) => { $$arr && __f($$arr, $e, event, cb) }
+
+          return (q, e, cb) => on(D, e, (_, event) => _f($$(q), event.target, event, cb))
+        })()
+
+        const millis = 1
+        const seconds = 1000 * millis
+
+        on(D, 'DOMContentLoaded', () => {
+          console.log("document loaded!")
+        })
+
+        live('button', 'click', $button => {
+          alert("remove me!")
+        });
+      })()
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

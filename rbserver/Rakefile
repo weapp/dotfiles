@@ -1,0 +1,6 @@
+task :default => %w[test]
+task :rb => %W[app.rb]
+
+task :test do
+  sh "bundle exec rspec spec"
+end
