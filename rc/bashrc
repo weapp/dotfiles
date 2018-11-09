@@ -7,6 +7,7 @@ export DOTFILES=~/dotfiles
 [[ -d $HOME/.bin ]] && PATH=$HOME/.bin:$PATH
 PATH=$DOTFILES/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
+PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH
 
 # Source all files in "source"
@@ -31,3 +32,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
 [ -f /Users/manuel.albarran/.travis/travis.sh ] && source /Users/manuel.albarran/.travis/travis.sh
+
+export HISTTIMEFORMAT="%d/%m/%y %T - "

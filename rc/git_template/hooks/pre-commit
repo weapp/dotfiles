@@ -9,7 +9,7 @@ fi
 read -r -d '' fail_words <<- EOM
   # debugger
   # byebug
-  # binding.pry
+  # # binding.pry
   show me the page
   # console.log
   >>>>>>
