@@ -5,6 +5,12 @@ Host *
 # Forward ssh agent to the remote machine.
 ForwardAgent yes
 
+Host *
+  ForwardAgent yes
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  ServerAliveInterval 60
+
 # Automatically add all common hosts to the host file as they are connected to.
 StrictHostKeyChecking no
 
