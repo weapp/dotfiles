@@ -126,7 +126,7 @@ alias status='git status -s'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gl="gitlog | head"
 alias gitsearch='git rev-list --all | xargs git grep -F'
-alias pushforce="[ -z "$(git fetch origin;  git log HEAD..origin/master --oneline)" ] && git push -f"
+# alias pushforce="[ -z "$(git fetch origin;  git log HEAD..origin/master --oneline)" ] && git push -f"
 
 function __git_dirty {
   git diff --quiet HEAD &>/dev/null

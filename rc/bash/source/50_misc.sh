@@ -68,15 +68,6 @@ alias rspecc="git diff --cached --name-only | grep '.rb' | xargs ls 2>/dev/null 
 
 alias gc="rubomodify && gc"
 
-# alias sb="/Applications/Sublime\ Text.app"
-alias subl="sublime --add "
-ts () {
-  DIR=$(dirname "$1");
-  mkdir -p "$DIR";
-  touch "$1";
-  $EDITOR "$1";
-}
-
 alias myip="curl http://whatismyip.akamai.com"
 alias myip6="curl http://ipv6.whatismyip.akamai.com"
 alias githubstatus="curl https://status.github.com/api/status.json -s  |ruby -rjson -e \"puts JSON.parse(STDIN.read)['status']\""
@@ -110,7 +101,13 @@ alias deploy='echo "
 3️⃣  cap production deploy
 "'
 
-
+function kc(){
+  if [[ "$1" ]]; then
+    kubectl config use-context "$1"
+  else
+    kubectl config get-contexts
+  fi
+}
 
 export GOPATH="/Users/manu/projects/go"
 # PATH=$PATH:$GOPATH/bin

@@ -20,7 +20,7 @@ then
     [ "$full" != "" ] && echo "$full "
   }
 else
-  if [[ "~/.rbenv/shims" ]]
+  if [[ -s "~/.rbenv/shims" ]]
   then
     export PATH="$HOME/.rbenv/bin:$PATH"
     export PATH=~/.rbenv/shims:$PATH
@@ -36,12 +36,21 @@ else
     }
 
   else
-    __ruby_ps ()
-    {
-      echo ""
-    }
+    if which rbenv > /dev/null
+    then
+      eval "$(rbenv init -)"
+      __ruby_ps ()
+      {
+        rbenv_ruby_version=`rbenv version | sed -e 's/ .*//'`
+        printf $rbenv_ruby_version
+      }
 
-
+    else
+      __ruby_ps ()
+      {
+        echo ""
+      }
+    fi
   fi
 fi
 
@@ -89,3 +98,6 @@ hasgem(){
     cat Gemfile | grep $@
   fi
 }
+
+
+# alias installruby='asdf install ruby "$(cat .ruby-version)"'
