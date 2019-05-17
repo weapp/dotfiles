@@ -12,10 +12,10 @@ ts () {
 
 
 if [[ ! "$SSH_TTY" ]] && is_osx; then
-  export EDITOR='sublime'
-  export LESSEDIT='sublime'
+  export EDITOR='sb'
+  export LESSEDIT='sb'
 else
-  export EDITOR='sublime'
+  export EDITOR='sb'
 fi
 
 export VISUAL="sb"

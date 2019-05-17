@@ -79,7 +79,7 @@ gemadd(){
 alias be="bundle exec"
 alias rk="be rake"
 alias rspec="rspec --color --format documentation "
-
+alias m="be ruby -Itest"
 
 alias metric1="rubocop"
 alias metric2="flog"

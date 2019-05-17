@@ -29,6 +29,7 @@ brew install git # for solve problems with autocomplete
 gitconfig host dependant configuration
 ```sh
 mkrc -o .gitconfig
+mkrc -o .bash_profile
 mkrc -o .docker
 ```
 

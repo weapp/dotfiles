@@ -14,3 +14,5 @@ function curlo(){
   curlim $@
   echo ""
 }
+
+alias ngrok="ssh -R 80:localhost:9292 ssh.localhost.run"
