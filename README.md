@@ -1,18 +1,18 @@
 # Dotfiles project
 
-esential apps
+### esential apps
 ```sh
 curl -s 'https://macapps.link/es/1password-caffeine-chrome-sublime-spotify-telegram-slack-docker' | sh
 ```
 
-copy ssh key
+### copy ssh key
 ```sh
 mkdir -p $HOME/.ssh
 cp $HOME/?????/ssh/* $HOME/.ssh
 chmod 600 $HOME/.ssh/id_rsa
 ```
 
-[install brew](http://brew.sh/)
+### [install brew](http://brew.sh/)
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -26,20 +26,33 @@ rcup -v -d ~/dotfiles/rc
 brew install git # for solve problems with autocomplete
 ```
 
-gitconfig host dependant configuration
+### gitconfig host dependant configuration
 ```sh
 mkrc -o .gitconfig
 mkrc -o .bash_profile
 mkrc -o .docker
 ```
 
-git configuration
+### git configuration
 ```sh
 git config --global user.name "Manuel Albarran"
 git config --global user.email "weapp@...."
 ```
 
-more apps
+
+### Sublime Text
+
+Install [Package Control](https://packagecontrol.io/installation).
+
+[Symlink to dotfiles](https://packagecontrol.io/docs/syncing):
+
+```
+cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
+rm -r User
+ln -s ~/dotfiles/sublime3/User/
+```
+
+### more apps
 ```sh
 curl -s 'https://macapps.link/es/firefox-skitch-github-sequelpro-insomnia-unarchiver-skim-cleanmymac-vlc-whatsapp' | sh
 ```
@@ -84,7 +97,7 @@ brew install "jq"
 ```
 
 
-gcloud
+### gcloud
 ```sh
 brew install google-cloud-sdk
 
@@ -103,7 +116,7 @@ gcloud container clusters get-credentials cluster-1
 kubectl get pods
 ```
 
-Minikube
+### Minikube
 
 
 https://github.com/kubernetes/minikube
@@ -122,6 +135,6 @@ minikube config set vm-driver hyperkit
 minikube start --vm-driver hyperkit
 ```
 
-## After install
+### After install
 
 [Monokai for terminal](https://github.com/stephenway/monokai.terminal)
