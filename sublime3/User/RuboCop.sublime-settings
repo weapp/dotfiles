@@ -1,0 +1,10 @@
+  {
+    // "rubocop_command": "bundle exec rubocop --auto-correct --format simple -D",
+    "check_for_rbenv": true,
+    "check_for_rvm": false,
+    // "rvm_auto_ruby_path":  "",
+    "mark_issues_in_view": true,
+    "rbenv_path": "/usr/local/bin/rbenv",
+    "show_auto_correct_warning": true,
+  // "rubocop_config_file": ""
+  }

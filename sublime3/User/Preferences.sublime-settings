@@ -1,0 +1,99 @@
+{
+	"_translate_tabs_to_spaces": true,
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Theme - Afterglow/Afterglow-monokai.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"tmp",
+		"log",
+		"coverage",
+		".classpath",
+		".project",
+		"*.beam",
+		"*.pyc",
+		"*.pyo",
+		"*.svg",
+		"*.scssc",
+		"sprockets%*",
+		"*.icon",
+		"*.sassc",
+		"screenshot_*.html",
+		"*.ppt",
+		"*.odp",
+		"*.pptx",
+		"*.xpm",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.min.js",
+		".gitkeep"
+	],
+	"folder_exclude_patterns":
+	[
+		".bundle",
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"temp",
+		"target",
+		".settings",
+		"meta_request",
+		"node_modules",
+		"vendor",
+		"deps",
+		"_build",
+		"tmp"
+	],
+	"folder_no_icon": true,
+	"font_face": "monaco",
+	"font_face_": "inconsolata-g",
+	"font_size": 14.0,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"open_files_in_new_window": false,
+	"paths":
+	{
+		"linux":
+		[
+		],
+		"osx":
+		[
+			"~/.rbenv/shims",
+			"~/.rbenv/bin"
+		],
+		"windows":
+		[
+		]
+	},
+	"rulers":
+	[
+		80,
+		100,
+		120
+	],
+	"shift_tab_unindent": true,
+	"tab_size": 2,
+	"tabs_padding_small": true,
+	"tabs_small": true,
+	"theme": "Afterglow.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}

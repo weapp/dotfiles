@@ -1,0 +1,60 @@
+{
+	"bootstrapped": true,
+	"downloader_precedence":
+	{
+		"linux":
+		[
+			"curl",
+			"urllib",
+			"wget"
+		],
+		"osx":
+		[
+			"curl",
+			"urllib"
+		],
+		"windows":
+		[
+			"wininet"
+		]
+	},
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AlignTab",
+		"arduino-cli",
+		"Arduino-like IDE",
+		"Better CoffeeScript",
+		"BracketHighlighter",
+		"Coffee Color Scheme",
+		"Dockerfile Syntax Highlighting",
+		"DotENV",
+		"Elixir",
+		"GitHubinator",
+		"Gofmt",
+		"Hermes",
+		"Javascript Beautify",
+		"JSON Reindent",
+		"JSX",
+		"Open Finder",
+		"OpenPath",
+		"Package Control",
+		"Path Tools",
+		"Pretty JSON",
+		"React IDE",
+		"ReactJS",
+		"RemoveDuplicateLines",
+		"RuboCop",
+		"Sass",
+		"SCSS",
+		"Smart Path Copy",
+		"Spec Finder",
+		"SublimeERB",
+		"SublimeLinter-coffee",
+		"SublimeLinter-rubocop",
+		"Theme - Afterglow",
+		"TOML"
+	]
+}
