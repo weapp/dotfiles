@@ -1,7 +1,12 @@
 {
+	"_dictionary": "Packages/Language - English/_en_US.dic",
+	"_spell_check": true,
 	"_translate_tabs_to_spaces": true,
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/Theme - Afterglow/Afterglow-monokai.tmTheme",
+	"draw_centered": false,
+	"draw_white_space": "selection",
+	"enable_hexadecimal_encoding": false,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
@@ -61,9 +66,12 @@
 		"tmp"
 	],
 	"folder_no_icon": true,
-	"font_face": "monaco",
-	"font_face_": "inconsolata-g",
+	"font_face": "menlo",
+	"font_face_1": "monaco",
+	"font_face_2": "inconsolata-g",
 	"font_size": 14.0,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -83,6 +91,7 @@
 		[
 		]
 	},
+	"match_brackets_angle": true,
 	"rulers":
 	[
 		80,
@@ -95,5 +104,6 @@
 	"tabs_small": true,
 	"theme": "Afterglow.sublime-theme",
 	"translate_tabs_to_spaces": true,
+	"tree_animation_enabled": false,
 	"trim_trailing_white_space_on_save": true
 }
