@@ -147,7 +147,6 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
-
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
 
