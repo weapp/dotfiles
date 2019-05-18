@@ -1,4 +1,9 @@
 // These settings override both User and Default settings for the Markdown syntax
 {
+  "extensions":
+  [
+    "markdown",
+    "md"
+  ],
   "color_scheme": "Packages/Theme - Afterglow/Afterglow-markdown.tmTheme"
 }
