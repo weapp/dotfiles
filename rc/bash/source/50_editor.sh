@@ -3,7 +3,7 @@
 # alias sublime="/Applications/Sublime\ Text.app/Contents//SharedSupport/bin/subl"
 alias sb="/Applications/Sublime\ Text.app/Contents//SharedSupport/bin/subl"
 alias subl="sb --add "
-ts () {
+tss () {
   DIR=$(dirname "$1");
   mkdir -p "$DIR";
   touch "$1";
