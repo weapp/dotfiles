@@ -17,3 +17,16 @@ if [ -d /usr/local/etc/bash_completion.d/ ]; then
       source $file
   done
 fi
+
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring
+# wildcards.
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+
+# SSH auto-completion based on entries in known_hosts.
+# if [[ -e ~/.ssh/known_hosts ]]; then
+#   complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp sftp
+# fi
+
+
+complete -W "NSGlobalDomain" defaults

@@ -15,11 +15,6 @@ function titlebar() {
   echo -n $'\e]0;'"$*"$'\a'
 }
 
-# SSH auto-completion based on entries in known_hosts.
-if [[ -e ~/.ssh/known_hosts ]]; then
-  complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp sftp
-fi
-
 # Disable ansible cows }:]
 export ANSIBLE_NOCOWS=1
 
@@ -88,17 +83,39 @@ alias mkdot="mkrc -d $HOME/dotfiles/rc"
 # alias now='date -u +"%Y%m%d%H%M%S"'
 alias now='date +%s'
 
+function ipconfig(){
+  ifconfig | egrep "((127\.\d+\.\d+\.\d+)|(10\.\d+\.\d+\.\d+)|(172\.1[6-9]\.\d+\.\d+)|(172\.2[0-9]\.\d+\.\d+)|(172\.3[0-1]\.\d+\.\d+)|(192\.168\.\d+\.\d+))|$"
+}
+
 # export DOCKER_HOST='tcp://127.0.0.1:2375'
 
 
+# alias deploy='echo "
+# 0️⃣  cd ~/projects/cab/ && git checkout master && git pull && git push origin master:production
+
+# 1️⃣  ssh eu-dev
+
+# 2️⃣  cd ~/workspace/cabify_server && git checkout production && git pull && bundle
+
+# 3️⃣  cap production deploy
+# "'
+
 alias deploy='echo "
-0️⃣  cd ~/projects/cab/ && git checkout master && git pull && git push origin master:production
+0️⃣  git checkout master; git pull
 
-1️⃣  ssh eu-dev
+1️⃣  git tag -a "XXX" -m "XXX"
 
-2️⃣  cd ~/workspace/cabify_server && git checkout production && git pull && bundle
+2️⃣  push --follow-tags
 
-3️⃣  cap production deploy
+3️⃣  git checkout develop; git pull
+
+4️⃣  git merge master --no-ff
+
+5️⃣  git commit -m \"update with master\"
+
+6️⃣  git push
+
+7️⃣  open \"https://console.cloud.google.com/cloud-build/builds?authuser=1&project=janus-156310\"
 "'
 
 function kc(){
@@ -119,3 +136,13 @@ export PATH=$PATH:$GOROOT/bin
 k () { cd ~/.k; eval "$(ruby k.rb "$@")"; }
 
 function newtab { osascript -e 'tell application "Terminal" to activate' -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down' -e "tell application \"Terminal\" to do script \"$*\" in selected tab of the front window"; }
+
+
+
+
+
+
+
+drmi () {
+  docker images | grep "$1" | tr -s " " | cut -d ' ' -f 2 | xargs -I {} docker rmi "$1:{}"
+}
