@@ -26,10 +26,12 @@ AllCops:
     - '**/Berksfile'
     - '**/Cheffile'
     - '**/Vagabondfile'
+  Exclude:
+    - 'cache/**/*'
+    - 'vendor/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
   # Exclude:
-  #   - 'db/**/*'
-  #   - 'config/**/*'
   #   - 'script/**/*'
-  #   - 'vendor/**/*'
-  #   - 'spec/fixtures/**/*'
   #   - 'config/environment'
+  #   - 'spec/fixtures/**/*'

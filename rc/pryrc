@@ -1,5 +1,7 @@
 Pry.config.history.file = "#{ENV['HOME']}/.irb-save-history"
 
+Pry.config.pager = false
+
 if defined?(PryDebugger)
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
@@ -44,4 +46,9 @@ def c(*args)
     require 'spec_helper'
     FactoryGirl.create(*args)
   end
+end
+
+def r!
+  require "./app"
+  App.reload
 end
