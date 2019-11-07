@@ -17,6 +17,20 @@ alias ss="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resou
 alias lock="/System/Library/CoreServices/Menu\ Extras/user.menu/Contents/Resources/CGSession -suspend"
 alias zz=ss
 
+function zip_folders() {
+  for i in */; do
+    echo "${i%}";
+    zip -1 -q -r "${i%/}.zip" "$i";
+  done;
+}
+
+function trash_folders() {
+  for i in */; do
+    echo "${i%}";
+    mv "${i%}" ~/.Trash
+  done;
+}
+
 # Create a new Parallels VM from template, replacing the existing one.
 function vm_template() {
   local name="$@"
