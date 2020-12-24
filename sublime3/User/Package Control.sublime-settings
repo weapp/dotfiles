@@ -5,12 +5,13 @@
 		"linux":
 		[
 			"curl",
-			"urllib",
-			"wget"
+			"wget",
+			"urllib"
 		],
 		"osx":
 		[
 			"curl",
+			"wget",
 			"urllib"
 		],
 		"windows":
@@ -23,40 +24,71 @@
 	],
 	"installed_packages":
 	[
+		"Advanced CSV",
 		"AlignTab",
+		"ArcticTypescript",
 		"arduino-cli",
 		"Arduino-like IDE",
+		"ayu",
 		"Better CoffeeScript",
 		"BracketHighlighter",
 		"Coffee Color Scheme",
+		"CSV",
+		"Cucumber",
 		"Dockerfile Syntax Highlighting",
 		"DotENV",
 		"Elixir",
+		"Feature Presentation",
+		"Gherkin (Cucumber) Formatter",
 		"GitGutter",
 		"GitHubinator",
 		"Gofmt",
-		"Hermes",
+		"GraphQL",
+		"Graphvizer",
+		"GraphvizPreview",
+		"Helium",
+		"HTML2Haml",
 		"Javascript Beautify",
+		"Jinja2",
 		"JSON Reindent",
 		"JSX",
 		"MarkdownEditing",
+		"MJML-syntax",
+		"Monokai - Spacegray",
+		"nginx",
 		"Open Finder",
 		"OpenPath",
 		"Package Control",
 		"Path Tools",
 		"Pretty JSON",
+		"Pretty Ruby",
 		"React IDE",
 		"ReactJS",
 		"RemoveDuplicateLines",
 		"RuboCop",
+		"RubocopDaemon",
+		"Rubyfmt",
 		"Sass",
 		"SCSS",
 		"Smart Path Copy",
 		"Spec Finder",
+		"sql-formatter",
+		"SqlBeautifier",
+		"sublime-rufo",
 		"SublimeERB",
 		"SublimeLinter-coffee",
 		"SublimeLinter-rubocop",
+		"Syntax Highlighting for Sass",
+		"Tailwind CSS Autocomplete",
 		"Theme - Afterglow",
-		"TOML"
+		"Theme - Lanzhou",
+		"Theme - SoDaReloaded",
+		"TOML",
+		"TypeScript",
+		"Vuejs Complete Package",
+		"ZSH"
+	],
+	"repositories":
+	[
 	]
 }

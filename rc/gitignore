@@ -19,3 +19,6 @@ rc/Library/
 # xcode compilation files
 Target Support Files
 *.xcuserdatad
+
+
+mydev

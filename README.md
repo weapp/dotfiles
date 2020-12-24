@@ -180,7 +180,7 @@ brew install "nmap"
 
 ### gcloud
 ```sh
-brew install google-cloud-sdk
+# brew install google-cloud-sdk # installed from repositories in home directory
 
 gcloud config configurations list
 gcloud auth configure-docker

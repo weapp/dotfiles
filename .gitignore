@@ -21,3 +21,6 @@
 .gitconfig
 rc/ssh/config
 rc/gitconfig
+
+
+ohmyzsh-custom

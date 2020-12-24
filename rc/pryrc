@@ -1,4 +1,5 @@
-Pry.config.history.file = "#{ENV['HOME']}/.irb-save-history"
+# Pry.config.history.file = "#{ENV['HOME']}/.irb-save-history"
+Pry.config.history_file = "#{ENV['HOME']}/.irb-save-history"
 
 Pry.config.pager = false
 
