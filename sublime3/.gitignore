@@ -5,3 +5,7 @@ User/GoSublime/*
 GoSublime-aux.sublime-settings
 User/oscrypto-ca-bundle.crt
 User/Stino
+
+
+User/*.sublime-project
+User/*.sublime-workspace
