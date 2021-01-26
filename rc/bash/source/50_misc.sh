@@ -79,6 +79,7 @@ function runhugs(){
 alias path='echo $PATH | tr -s ":" "\n"'
 
 alias mkdot="mkrc -d $HOME/dotfiles/rc"
+alias mkx="mkrc -d $HOME/xfiles/rc"
 
 # alias now='date -u +"%Y%m%d%H%M%S"'
 alias now='date +%s'
