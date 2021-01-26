@@ -42,6 +42,9 @@ alias gu-all='eachdir git pull'
 alias gp-all='eachdir git push'
 alias gs-all='eachdir git status'
 
+# alias "gmo"="git merge --no-edit --no-ff origin/"
+function gmo() { git merge --no-edit --no-ff "origin/$1"; }
+
 # open all changed files (that still actually exist) in the editor
 function ged() {
   local files=()

@@ -138,11 +138,40 @@ k () { cd ~/.k; eval "$(ruby k.rb "$@")"; }
 function newtab { osascript -e 'tell application "Terminal" to activate' -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down' -e "tell application \"Terminal\" to do script \"$*\" in selected tab of the front window"; }
 
 
-
-
-
-
-
 drmi () {
   docker images | grep "$1" | tr -s " " | cut -d ' ' -f 2 | xargs -I {} docker rmi "$1:{}"
+}
+
+topdf () {
+  docker run \
+  --rm \
+  -v $(pwd):/app madnight/docker-alpine-wkhtmltopdf \
+  --page-size Letter \
+  --margin-bottom "1in" \
+  --margin-left "1in" \
+  --margin-right "1in" \
+  --margin-top "1in" \
+  --minimum-font-size 16 \
+  --footer-font-size 12 \
+  --footer-font-name 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji", "Noto Sans CJK SC", "Noto Sans CJK KR"' \
+  --footer-left "[doctitle]" \
+  --footer-right "[page]/[toPage]" \
+  --run-script 'document.documentElement.style.fontSize = "16pt"' \
+  --print-media-type "app/$1" "app/$1.pdf"
+}
+
+ob() {
+  osascript ~/dotfiles/scripts/openChrome.applescript "$1" "Google Chrome"
+}
+
+
+
+
+
+ktx-ls() {
+  kubectl config get-contexts
+}
+
+ktx-use() {
+  kubectl config use-context $1
 }

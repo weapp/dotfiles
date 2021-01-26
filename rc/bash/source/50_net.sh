@@ -15,4 +15,12 @@ function curlo(){
   echo ""
 }
 
-alias ngrok="ssh -R 80:localhost:9292 ssh.localhost.run"
+# alias ngrok="ssh -R 80:localhost:3000 manu@ssh.localhost.run"
+alias ngrok2="ssh -R 80:localhost:3000 serveo.net"
+
+
+
+alias ngrok="ssh -R localhost:80:localhost:3000 manu123@ssh.localhost.run"
+
+
+

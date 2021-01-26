@@ -31,3 +31,22 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 export HISTTIMEFORMAT="%d/%m/%y %T - "
+
+
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+
+function resetsound() {
+  sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
+  sudo killall coreaudiod
+}
+
+
+alias xhr='curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest"'

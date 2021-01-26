@@ -7,3 +7,6 @@ bundle: --no-rdoc --no-ri
 gem: --no-rdoc --no-ri --no-document
 install: --no-rdoc --no-ri
 update:  --no-rdoc --no-ri
+# :sources:
+# - https://rubygems.org/
+# - https://6a495cbed607699f7f9e7ab62641eb8908c6e832:x-oauth-basic@rubygems.pkg.github.com/3mundi/

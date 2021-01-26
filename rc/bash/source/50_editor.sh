@@ -1,7 +1,7 @@
 # Editing
 
 # alias sublime="/Applications/Sublime\ Text.app/Contents//SharedSupport/bin/subl"
-alias sb="/Applications/Sublime\ Text.app/Contents//SharedSupport/bin/subl"
+# alias sb="/Applications/Sublime\ Text.app/Contents//SharedSupport/bin/subl"
 alias subl="sb --add "
 tss () {
   DIR=$(dirname "$1");
@@ -12,13 +12,13 @@ tss () {
 
 
 if [[ ! "$SSH_TTY" ]] && is_osx; then
-  export EDITOR='sb'
-  export LESSEDIT='sb'
+  export EDITOR='sb -n -w'
+  export LESSEDIT='sb -n -w'
 else
-  export EDITOR='sb'
+  export EDITOR='sb -n -w'
 fi
 
-export VISUAL="sb"
+export VISUAL="sb -n -w"
 
 alias e=sb
 alias openbash='sb $DOTFILES/rc/source/'

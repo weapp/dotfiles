@@ -2,19 +2,34 @@
 	"_dictionary": "Packages/Language - English/_en_US.dic",
 	"_spell_check": true,
 	"_translate_tabs_to_spaces": true,
+	"binary_file_patterns":
+	[
+		"public/packs/*",
+		"coverage/*",
+		"cache/*",
+		"*.tbz2",
+		"*.gzip",
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*.svg"
+	],
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/Theme - Afterglow/Afterglow-monokai.tmTheme",
 	"draw_centered": false,
 	"draw_white_space": "selection",
 	"enable_hexadecimal_encoding": false,
 	"ensure_newline_at_eof_on_save": true,
-
-	"font_options":
-	[
-		"gray_antialias",
-		"subpixel_antialias"
-	],
-
 	"file_exclude_patterns":
 	[
 		"tmp",
@@ -25,7 +40,6 @@
 		"*.beam",
 		"*.pyc",
 		"*.pyo",
-		"*.svg",
 		"*.scssc",
 		"sprockets%*",
 		"*.icon",
@@ -76,13 +90,21 @@
 	"font_face": "menlo",
 	"font_face_1": "monaco",
 	"font_face_2": "inconsolata-g",
-	"font_size": 14.0,
+	"font_options":
+	[
+		"gray_antialias",
+		"subpixel_antialias"
+	],
+	"font_size": 11.0,
+	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Markdown"
+		"Markdown",
+		"Rubyfmt",
+		"sublime-rufo",
+		"Vintage"
 	],
 	"match_brackets_angle": true,
 	"open_files_in_new_window": false,
@@ -100,6 +122,8 @@
 		[
 		]
 	},
+	"rubocop_path": "/Users/manu/.rbenv/shims/rubocop",
+	"ruby_path": "/Users/manu/.rbenv/shims/ruby",
 	"rulers":
 	[
 		80,
