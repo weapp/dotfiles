@@ -95,7 +95,7 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 13.0,
+	"font_size": 15.0,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
