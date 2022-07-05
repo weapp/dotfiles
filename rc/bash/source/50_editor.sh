@@ -3,7 +3,7 @@
 # alias sublime="/Applications/Sublime\ Text.app/Contents//SharedSupport/bin/subl"
 # alias sb="/Applications/Sublime\ Text.app/Contents//SharedSupport/bin/subl"
 alias subl="sb --add "
-tss () {
+ts () {
   DIR=$(dirname "$1");
   mkdir -p "$DIR";
   touch "$1";
@@ -19,6 +19,8 @@ else
 fi
 
 export VISUAL="sb -n -w"
+
+export THOR_MERGE="sb -n -w"
 
 alias e=sb
 alias openbash='sb $DOTFILES/rc/source/'

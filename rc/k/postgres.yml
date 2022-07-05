@@ -1,5 +1,33 @@
 commands:
   default: up
   up: postgres -D /usr/local/var/postgres
-  console: psql -d template1 # CREATE ROLE postgres LOGIN CREATEDB;
+
+  console: psql -d template1 -c "CREATE ROLE postgres LOGIN CREATEDB SUPERUSER;"
+           # psql -d template1
+           # CREATE ROLE postgres LOGIN CREATEDB SUPERUSER;
+           # DROP ROLE postgres;
+           # ALTER ROLE postgres LOGIN CREATEDB SUPERUSER;
+           # \q
   install: "brew update && brew install postgresql"
+
+
+# brew services list
+
+# brew services start postgresql@11
+# brew services restart postgresql@11
+
+# rm -rf /usr/local/var/postgres
+
+
+
+
+# /usr/local/opt/postgresql/bin/postgres -D /usr/local/var/postgres
+
+
+#   <string>/usr/local/var/log/postgres.log</string>
+#   <key>StandardOutPath</key>
+#   <string>/usr/local/var/log/postgres.log</string>
+
+
+
+

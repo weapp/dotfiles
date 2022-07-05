@@ -1,0 +1,10 @@
+bundler
+pry
+gem-ctags
+rubocop
+reek
+rails
+pry-rails
+overcommit
+standard
+solargraph

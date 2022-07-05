@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+o en# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -161,7 +161,7 @@ ZSH_CUSTOM=/Users/manu/dotfiles/ohmyzsh-custom
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime rbenv ruby rails osx docker python kubectl zsh-autosuggestions gcloud pyenv pipenv)
+plugins=(git sublime rbenv asdf ruby rails macos docker python kubectl zsh-autosuggestions gcloud pyenv pipenv fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -198,6 +198,8 @@ alias be="bundle exec"
 function gmo() { git merge --no-edit --no-ff "origin/$1"; }
 
 export PATH=$HOME/.local/bin:$PATH
+# Cellar/yarn/1.16.0/bin/yarn
+# ln -s "/usr/local/bin/yarn" ~/.local/bin/yarn
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -230,13 +232,59 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 # export "python3.8"="/usr/local/opt/python@3.8/libexec/bin"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
-ts () {
-  DIR=$(dirname "$1");
-  mkdir -p "$DIR";
-  touch "$1";
-  sb "$1";
-}
+# ts () {
+#   DIR=$(dirname "$1");
+#   mkdir -p "$DIR";
+#   touch "$1";
+#   sb "$1";
+# }
+
+# source  ~/.bash/source/00_dotfiles.sh
+# source  ~/.bash/source/50_editor.sh
 
 sshpath () {
   kubectl config use-context sam; kubectl exec --stdin --tty deployment/path -- bash
 }
+
+
+
+alias subl="sb --add "
+ts () {
+  DIR=$(dirname "$1");
+  mkdir -p "$DIR";
+  touch "$1";
+  sleep 1
+  sb "$1";
+}
+
+
+if [[ ! "$SSH_TTY" ]]; then
+  export EDITOR='sb -n -w'
+  export LESSEDIT='sb -n -w'
+else
+  export EDITOR='sb -n -w'
+fi
+
+export VISUAL="sb -n -w"
+
+export THOR_MERGE="sb -n -w"
+
+alias e=sb
+alias openbash='sb $DOTFILES/rc/source/'
+alias opendot='sb $DOTFILES/'
+alias openup='sb $DOTFILES/rc/bin/up'
+alias catup='cat $DOTFILES/rc/bin/up'
+alias upls="catup | grep -o '  .*)' | grep -o '[a-z][a-z]*' | cat"
+alias cddot='cd $DOTFILES/'
+alias openhost='sb /etc/hosts'
+alias reloadbash='source ~/.bash_profile'
+
+function w2 {
+    while :; do clear; date; echo; $@; sleep 2; done
+}
+
+
+# . /usr/local/opt/asdf/libexec/asdf.sh
+
+
+m () { cd ~/.k; eval "$(ruby k.rb "$@")"; }

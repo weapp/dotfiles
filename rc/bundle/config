@@ -1,6 +1,7 @@
 ---
 BUNDLE_JOBS: "4"
-BUNDLE_PATH: "vendor/bundle"
+BUNDLE_PATH: "~/.bundle"
+# BUNDLE_PATH: "vendor/bundle"
 BUNDLE_CONSOLE: "pry"
 # BUNDLE_MIRROR__HTTPS://RUBYGEMS__ORG/: "http://localhost:4242"
 # BUNDLE_MIRROR__HTTP://RUBYGEMS__ORG/: "http://localhost:4242"

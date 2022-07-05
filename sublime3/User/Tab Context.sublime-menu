@@ -1,0 +1,4 @@
+[
+  { "caption": "-" },
+  { "command": "close_saved", "caption": "Close Saved Files" }
+]

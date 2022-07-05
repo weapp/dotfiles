@@ -2,6 +2,22 @@
 	"_dictionary": "Packages/Language - English/_en_US.dic",
 	"_spell_check": true,
 	"_translate_tabs_to_spaces": true,
+	"auto_complete": true,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".(){}[],'\"=<>/\\+-|&*%=$#@! ",
+			"selector": "source.python",
+		},
+		{
+			"characters": ":.(){}[],'\"=<>/\\+-|&*%=$#@! ",
+			"selector": "source & - source.python - constant.numeric",
+		},
+		{
+			"characters": " qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP",
+			"selector": "text",
+		}
+	],
 	"binary_file_patterns":
 	[
 		"public/packs/*",
@@ -81,7 +97,7 @@
 		".settings",
 		"meta_request",
 		"node_modules",
-		"vendor",
+		// "vendor",
 		"deps",
 		"_build",
 		"tmp"
@@ -95,16 +111,29 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 15.0,
+	"font_size": 16.0,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"arduino-cli",
+		"Arduino-like IDE",
+		"ayu",
+		"BracketHighlighter",
 		"Markdown",
+		"MarkdownEditing",
+		"Open Finder",
+		"RuboCop",
+		"RubocopDaemon",
 		"Rubyfmt",
+		"Sass",
+		"SideBarEnhancements",
+		"Smart Path Copy",
+		"Spec Finder",
 		"sublime-rufo",
-		"Vintage"
+		"SublimeLinter-rubocop",
+		"Vintage",
 	],
 	"match_brackets_angle": true,
 	"open_files_in_new_window": false,
@@ -120,7 +149,7 @@
 		],
 		"windows":
 		[
-		]
+		],
 	},
 	"rubocop_path": "/Users/manu/.rbenv/shims/rubocop",
 	"ruby_path": "/Users/manu/.rbenv/shims/ruby",
@@ -137,5 +166,5 @@
 	"theme": "Afterglow.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
 }

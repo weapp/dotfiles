@@ -3,7 +3,7 @@
 [color]
 	ui = true
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/manu/.gitignore
 	pager = less -F -X
 	editor = sb -n -w
 [push]
@@ -33,9 +33,9 @@
  	path = ~/.gitconfig.local
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.8/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /private/var/folders/f4/jc8v9pwj6vn05rz31kg9l5cw0000gp/T/AppTranslocation/F2E4E4D8-5EF9-4551-BA59-6A21CE50D317/d/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f

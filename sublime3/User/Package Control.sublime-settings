@@ -17,7 +17,7 @@
 		"windows":
 		[
 			"wininet"
-		]
+		],
 	},
 	"in_process_packages":
 	[
@@ -29,10 +29,12 @@
 		"ArcticTypescript",
 		"arduino-cli",
 		"Arduino-like IDE",
+		"AutoPEP8",
 		"ayu",
 		"Better CoffeeScript",
 		"Bison",
 		"BracketHighlighter",
+		"Case Conversion",
 		"Coffee Color Scheme",
 		"CSV",
 		"Cucumber",
@@ -40,6 +42,7 @@
 		"DotENV",
 		"Elixir",
 		"Feature Presentation",
+		"FileManager",
 		"Gherkin (Cucumber) Formatter",
 		"GitGutter",
 		"GitHubinator",
@@ -49,10 +52,12 @@
 		"GraphvizPreview",
 		"Helium",
 		"HTML2Haml",
+		"INI",
 		"Javascript Beautify",
 		"Jinja2",
 		"JSON Reindent",
 		"JSX",
+		"LSP-graphql",
 		"MarkdownEditing",
 		"MJML-syntax",
 		"Monokai - Spacegray",
@@ -71,6 +76,7 @@
 		"Rubyfmt",
 		"Sass",
 		"SCSS",
+		"SideBarEnhancements",
 		"Smart Path Copy",
 		"Spec Finder",
 		"sql-formatter",
@@ -80,16 +86,19 @@
 		"SublimeLinter-coffee",
 		"SublimeLinter-rubocop",
 		"Syntax Highlighting for Sass",
+		"Tabnine",
 		"Tailwind CSS Autocomplete",
 		"Theme - Afterglow",
+		"Theme - Alpenglow",
 		"Theme - Lanzhou",
 		"Theme - SoDaReloaded",
 		"TOML",
 		"TypeScript",
+		"VBScript",
 		"Vuejs Complete Package",
 		"ZSH"
 	],
 	"repositories":
 	[
-	]
+	],
 }

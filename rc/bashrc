@@ -57,3 +57,4 @@ function nxttag() {
    git tag | ruby -e 'puts ARGF.read.split.map {|l| l.split(".").map(&:to_i) }.sort(&:<=>).last.tap{|l|l[-1] +=1}.join(".")'
 }
 
+. "$HOME/.cargo/env"
