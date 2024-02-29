@@ -1,7 +1,7 @@
 # Dotfiles project
 
-
 ### Some configurations
+
 ```sh
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -75,18 +75,22 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ```
 
 ### esential apps
+
 ```sh
 curl -s 'https://macapps.link/es/1password-caffeine-chrome-sublime-spotify-telegram-slack-docker' | sh
 ```
 
 ### copy ssh key
+
 ```sh
 mkdir -p $HOME/.ssh
 cp $HOME/?????/ssh/* $HOME/.ssh
 chmod 600 $HOME/.ssh/id_rsa
+ssh-add --apple-use-keychain $HOME/.ssh/id_rsa
 ```
 
 ### [install brew](http://brew.sh/)
+
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -101,6 +105,7 @@ brew install git # for solve problems with autocomplete
 ```
 
 ### gitconfig host dependant configuration
+
 ```sh
 mkrc -o .gitconfig
 mkrc -o .bash_profile
@@ -108,11 +113,11 @@ mkrc -o .docker
 ```
 
 ### git configuration
+
 ```sh
 git config --global user.name "Manuel Albarran"
 git config --global user.email "weapp@...."
 ```
-
 
 ### Sublime Text
 
@@ -127,6 +132,7 @@ ln -s ~/dotfiles/sublime3/User/
 ```
 
 ### more apps
+
 ```sh
 curl -s 'https://macapps.link/es/firefox-skitch-github-sequelpro-insomnia-unarchiver-skim-cleanmymac-vlc-whatsapp' | sh
 ```
@@ -179,6 +185,7 @@ brew install "nmap"
 ```
 
 ### gcloud
+
 ```sh
 # brew install google-cloud-sdk # installed from repositories in home directory
 
@@ -199,11 +206,9 @@ kubectl get pods
 
 ### Minikube
 
-
 https://github.com/kubernetes/minikube
 
 https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#hyperkit-driver
-
 
 ```sh
 brew install hyperkit
