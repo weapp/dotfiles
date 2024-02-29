@@ -19,3 +19,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 . "$HOME/.cargo/env"
+
+source /Users/manu/.docker/init-bash.sh || true # Added by Docker Desktop

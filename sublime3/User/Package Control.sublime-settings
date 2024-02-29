@@ -29,6 +29,7 @@
 		"ArcticTypescript",
 		"arduino-cli",
 		"Arduino-like IDE",
+		"AutoFileName",
 		"AutoPEP8",
 		"ayu",
 		"Better CoffeeScript",
@@ -55,9 +56,12 @@
 		"INI",
 		"Javascript Beautify",
 		"Jinja2",
+		"Jq",
 		"JSON Reindent",
 		"JSX",
 		"LSP-graphql",
+		"Markdown Extended",
+		"Markdown HTML Preview",
 		"MarkdownEditing",
 		"MJML-syntax",
 		"Monokai - Spacegray",
@@ -88,6 +92,7 @@
 		"Syntax Highlighting for Sass",
 		"Tabnine",
 		"Tailwind CSS Autocomplete",
+		"Tailwind Reorder",
 		"Theme - Afterglow",
 		"Theme - Alpenglow",
 		"Theme - Lanzhou",
@@ -96,7 +101,7 @@
 		"TypeScript",
 		"VBScript",
 		"Vuejs Complete Package",
-		"ZSH"
+		"ZSH",
 	],
 	"repositories":
 	[

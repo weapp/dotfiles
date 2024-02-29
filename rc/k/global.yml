@@ -8,6 +8,6 @@ commands:
   cd: cd .
   set: export K_SERVICE=<%= SERVICE %>
   unset: unset K_SERVICE
-  edit: sublime .
+  edit: sb .
 env:
   K: "true"

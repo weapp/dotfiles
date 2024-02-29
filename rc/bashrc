@@ -58,3 +58,7 @@ function nxttag() {
 }
 
 . "$HOME/.cargo/env"
+
+source /Users/manu/.docker/init-bash.sh || true # Added by Docker Desktop
+
+PATH=~/.console-ninja/.bin:$PATH

@@ -22,7 +22,7 @@
 	[
 		"public/packs/*",
 		"coverage/*",
-		"cache/*",
+		// "cache/*",
 		"*.tbz2",
 		"*.gzip",
 		"*.jpg",
@@ -38,7 +38,8 @@
 		"*.swf",
 		"*.jar",
 		"*.zip",
-		"*.svg"
+		"*.svg",
+		"*.webp"
 	],
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/Theme - Afterglow/Afterglow-monokai.tmTheme",
@@ -48,6 +49,7 @@
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
+		"tmp",
 		"tmp",
 		"log",
 		"coverage",
@@ -83,11 +85,12 @@
 		"*.psd",
 		"*.db",
 		"*.min.js",
-		".gitkeep"
+		".gitkeep",
+		"*.webp"
 	],
 	"folder_exclude_patterns":
 	[
-		".bundle",
+		// ".bundle",
 		".svn",
 		".git",
 		".hg",
@@ -111,12 +114,13 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 16.0,
+	"font_size": 18.0,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"ActionScript",
 		"arduino-cli",
 		"Arduino-like IDE",
 		"ayu",
@@ -124,6 +128,8 @@
 		"Markdown",
 		"MarkdownEditing",
 		"Open Finder",
+		"Pretty Ruby",
+		"React IDE",
 		"RuboCop",
 		"RubocopDaemon",
 		"Rubyfmt",
@@ -133,6 +139,7 @@
 		"Spec Finder",
 		"sublime-rufo",
 		"SublimeLinter-rubocop",
+		"Tabnine",
 		"Vintage",
 	],
 	"match_brackets_angle": true,
@@ -167,4 +174,6 @@
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
 	"trim_trailing_white_space_on_save": true,
+	"index_exclude_gitignore": false,
+	"index_workers": 1,
 }

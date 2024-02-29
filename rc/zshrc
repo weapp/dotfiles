@@ -266,7 +266,6 @@ else
 fi
 
 export VISUAL="sb -n -w"
-
 export THOR_MERGE="sb -n -w"
 
 alias e=sb
@@ -278,6 +277,7 @@ alias upls="catup | grep -o '  .*)' | grep -o '[a-z][a-z]*' | cat"
 alias cddot='cd $DOTFILES/'
 alias openhost='sb /etc/hosts'
 alias reloadbash='source ~/.bash_profile'
+alias rrspec='VCR_MODE=rec rspec'
 
 function w2 {
     while :; do clear; date; echo; $@; sleep 2; done
@@ -288,3 +288,13 @@ function w2 {
 
 
 m () { cd ~/.k; eval "$(ruby k.rb "$@")"; }
+
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/manu/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/manu/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/Users/manu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/manu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+CLOUDSDK_PYTHON=/usr/local/bin/python3.7
+
+source /Users/manu/.docker/init-zsh.sh || true # Added by Docker Desktop

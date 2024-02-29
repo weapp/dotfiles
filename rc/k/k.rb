@@ -47,8 +47,8 @@ end
 SERVICE = service_name
 ## / service_name and command
 
-global = YAML.load(File.read("global.yml")) rescue {}
 service = YAML.load(File.read("#{service_name}.yml"))
+global = YAML.load(File.read(service["parent"] || "global.yml")) rescue {}
 
 class Table
   def initialize(table)
@@ -94,6 +94,11 @@ title_name = "echo -en '\\033]2;#{service_name.shellescape}\\007'"
 
 red_name = "echo $'\\e[31m[ #{service_name.shellescape} | #{directory} $ #{commands.join("; ")} ]\\e[0m'"
 
+if commands == [":"]
+  debug "command not found"
+  puts ":"
+  exit
+end
 
 commands_with_env = commands.map do |c|
   if c.is_a?(Cmd)

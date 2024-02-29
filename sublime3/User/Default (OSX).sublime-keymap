@@ -2,6 +2,8 @@
   { "keys": ["ctrl+super+t"], "command": "filename_to_clipboard" },
   { "keys": ["ctrl+5"], "command": "insert_datetime"},
   { "keys": ["alty+n"], "command": "insert_datetime"},
+  { "keys": ["alt+n"], "command": "insert_snippet", "args": {"contents": "ñ"}},
+
 
 
   // cmd-o to open a file in project instead of the OS dialog
