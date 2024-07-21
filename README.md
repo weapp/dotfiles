@@ -89,6 +89,15 @@ chmod 600 $HOME/.ssh/id_rsa
 ssh-add --apple-use-keychain $HOME/.ssh/id_rsa
 ```
 
+Add this config to `~/.ssh/config`:
+
+```
+Host *
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_rsa
+```
+
 ### [install brew](http://brew.sh/)
 
 ```sh
@@ -224,3 +233,13 @@ minikube start --vm-driver hyperkit
 ### After install
 
 [Monokai for terminal](https://github.com/stephenway/monokai.terminal)
+
+
+
+
+
+## Download From appstore:
+
+  * [Affinity Photo](https://apps.apple.com/es/app/affinity-photo/id824183456?l=en-GB&mt=12)
+
+  * [Affinity Designer](https://apps.apple.com/es/app/affinity-designer/id824171161?l=en-GB&mt=12)
